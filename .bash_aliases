@@ -11,4 +11,5 @@ alias weather='curl wttr.in'
 alias canopy='/home/mongwell/Canopy/canopy'
 alias calculator='python3 /home/mongwell/Programming" "Workspace/Python/Python-Stackskills/Calculator/Calculator.py'
 alias lock='~/.local/bin/distorted-pixelate-lock.sh'
-alias gifbg="~./local/bin/gifbg"
+alias gifbg="~/.local/bin/gifbg.sh"
+

@@ -1,75 +1,43 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath+=/home/mongwell/.config/nvim/dein/repos/github.com/Shougo/dein.vim
-
-" Required:
-if dein#load_state('/home/mongwell/.config/nvim/dein')
-  call dein#begin('/home/mongwell/.config/nvim/dein')
-
-  " Let dein manage dein
-  " Required:
-  call dein#add('/home/mongwell/.config/nvim/dein/repos/github.com/Shougo/dein.vim')
-
-  " Add or remove your plugins here:
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
-  " Deoplete
-  call dein#add('Shougo/deoplete.nvim')
-  if !has('nvim')
-      call dein#add('roxma/nvim-yarp')
-      call dein#add('roxma/vim-hug-neovim-rpc')
-    endif
-  call dein#add('zchee/deoplete-clang')
-  call dein#add('zchee/deoplete-jedi')
-  call dein#add('mhartington/oceanic-next')
-  call dein#add('vim-airline/vim-airline-themes')
-  call dein#add('tpope/vim-surround')
-  call dein#add('Townk/vim-autoclose')
-  call dein#add('majutsushi/tagbar.git')
-  call dein#add('kien/ctrlp.vim')
-
-  " You can specify revision/branch/tag.
-  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
-
-  " Required:
-  call dein#end()
-  call dein#save_state()
-endif
-
-" Required:
-filetype plugin indent on
-syntax enable
-
-" If you want to install not installed plugins on startup.
-if dein#check_install()
-  call dein#install()
-endif
-
-let g:deoplete#enable_at_startup = 1
-let g:airline#extensions#tagbar#enabled = 1
-let g:airline#extensions#tagbar#flags = ''  
-
-
 call plug#begin('~/.vim/plugged')
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
-Plug 'tpope/vim-sensible'
-Plug 'sheerun/vim-polyglot'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'Shougo/neco-syntax'
+Plug 'zchee/deoplete-clang'
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'zchee/deoplete-jedi'
+Plug 'wokalski/autocomplete-flow'
+Plug 'sebastianmarkow/deoplete-rust'
+Plug 'fszymanski/deoplete-emoji'
 
-Plug 'icymind/NeoSolarized'
-Plug 'joshdick/onedark.vim'
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+
+Plug 'tpope/vim-surround'
+Plug 'Townk/vim-autoclose'
+Plug 'majutsushi/tagbar'
+Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'vim-syntastic/syntastic'
 
+Plug 'vim-airline/vim-airline-themes'
+Plug 'mhartington/oceanic-next'
+Plug 'tpope/vim-sensible'
+Plug 'sheerun/vim-polyglot'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'icymind/NeoSolarized'
+Plug 'joshdick/onedark.vim'
 call plug#end()
 
 """""Keymappings""""
@@ -78,10 +46,28 @@ nmap <C-o> :NERDTreeToggle<CR>
 nmap <C-k> :TagbarToggle<CR>:
 nmap <C-p> :CtrlP<CR>
 
+""""""""""""""""""""
+
 syntax on
 colorscheme NeoSolarized
 set background=dark
 
+let g:deoplete#enable_at_startup = 1
+let g:neosnippet#enable_completed_snippet = 1
+let g:deoplete#sources#rust#racer_binary='which racer'
+let g:deoplete#sources#rust#rust_source_path='~/rust/src'
+let g:deoplete#sources#rust#show_duplicates=1
+
+let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so'
+let g:deoplete#sources#clang#clang_header='/usr/lib/clang/5.0.1/include'
+
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_check_on_open = 1
+let g:syntastic_error_symbol = "✗"
+let g:syntastic_warning_symbol = "⚠"
+
+let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#tagbar#flags = ''  
 let g:airline_theme='base16_solarized'
 let g:airline_powerline_fonts = 1
 let g:neosolarized_contrast = "normal"

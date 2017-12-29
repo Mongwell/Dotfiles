@@ -76,8 +76,10 @@ source $ZSH/oh-my-zsh.sh
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+export SSH_KEY_PATH="~/.ssh/rsa_id"
 
+# cargo
+export PATH=/home/mongwell/.cargo/bin:$PATH
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -88,3 +90,13 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source ~/.bash_aliases
+
+
+# Custom Functions
+
+cc() {
+    sourceFile=$1
+    binFile=${sourceFile:0:${#sourceFile} - 2} 
+    gcc -std=c99 -Wall $sourceFile -o $binFile
+}
+

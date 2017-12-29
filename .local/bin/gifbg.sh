@@ -20,6 +20,6 @@ IMGW=${IMGHW#*x}
 POSH=$((($SCRH/2)-($IMGH/2)))
 POSW=$((($SCRW/2)-($IMGW/2)))
 
-xwinwrap -g ${IMGHW}+${POSH}+${POSW} -ov -ni -s -nf -- gifview -w WID $1 -a
+xwinwrap -g ${IMGHW}+${POSH}+${POSW} -ov -ni -s -nf -- gifview -w WID $1 -a &!
 
 exit 0
