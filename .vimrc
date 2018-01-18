@@ -45,6 +45,8 @@ call plug#end()
 nmap <C-o> :NERDTreeToggle<CR>
 nmap <C-k> :TagbarToggle<CR>:
 nmap <C-p> :CtrlP<CR>
+" deoplete tab-complete
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 """"""""""""""""""""
 
@@ -57,6 +59,8 @@ let g:neosnippet#enable_completed_snippet = 1
 let g:deoplete#sources#rust#racer_binary='which racer'
 let g:deoplete#sources#rust#rust_source_path='~/rust/src'
 let g:deoplete#sources#rust#show_duplicates=1
+autocmd CompleteDone * pclose!
+
 
 let g:deoplete#sources#clang#libclang_path='/usr/lib/libclang.so'
 let g:deoplete#sources#clang#clang_header='/usr/lib/clang/5.0.1/include'
