@@ -1,4 +1,4 @@
 #!/bin/bash
-i3lock-fancy -p -g -- scrot -z
+./pixelated-lock.sh
 systemctl suspend
 

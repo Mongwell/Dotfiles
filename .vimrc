@@ -43,15 +43,18 @@ call plug#end()
 """""Keymappings""""
 
 nmap <C-o> :NERDTreeToggle<CR>
-nmap <C-k> :TagbarToggle<CR>:
+nmap <C-k> :TagbarToggle<CR>
 nmap <C-p> :CtrlP<CR>
 " deoplete tab-complete
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
+imap <expr><CR> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : pumvisible() ?
+            \ "\<C-y>" : "\<CR>"
+
 """"""""""""""""""""
 
 syntax on
-colorscheme NeoSolarized
+colorscheme OceanicNext
 set background=dark
 
 let g:deoplete#enable_at_startup = 1
@@ -72,7 +75,7 @@ let g:syntastic_warning_symbol = "⚠"
 
 let g:airline#extensions#tagbar#enabled = 1
 let g:airline#extensions#tagbar#flags = ''  
-let g:airline_theme='base16_solarized'
+let g:airline_theme='oceanicnext'
 let g:airline_powerline_fonts = 1
 let g:neosolarized_contrast = "normal"
 let g:neosolarized_visibility = "normal"

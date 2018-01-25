@@ -16,6 +16,7 @@ set $mod2 Mod1
 # is used in the bar {} block below.
 font pango:Source Code Pro 10
 
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -140,7 +141,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # lock the screen
 bindsym $mod+$mod2+l exec /home/mongwell/.local/bin/distorted-pixelate-lock.sh
-# lock and put suspend system
+# lock and suspend system
 bindsym $mod+$mod2+s exec /home/mongwell/.local/bin/lock-and-suspend.sh
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
@@ -208,8 +209,8 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
-gaps inner 10
-gaps outer 5
+gaps inner 13
+gaps outer 2
 
 # global colors
 set_from_resource $fg i3wm.color15
@@ -265,5 +266,5 @@ for_window [class=".*"] title_format " %title"
 exec_always compton --config ~/.config/compton.conf -bCGfc
 exec --no-startup-id xinput --set-prop 10 'libinput Accel Speed' -0.750
 exec --no-startup-id ~/.local/bin/touchpad.sh
-exec --no-startup-id i3lock-fancy -p -g -- scrot -z
-exec --no-startup-id xautolock -time 20 -locker /usr/local/bin/colorpixelock -killtime 10 -killer "systemctl suspend"
+exec --no-startup-id ~/.local/bin/distorted-pixelate-lock.sh -p -g -- scrot -z
+exec --no-startup-id xautolock -time 20 -locker /home/mongwell/.local/bin/distorted-pixelate-lock.sh -killtime 10 -killer "systemctl suspend"
