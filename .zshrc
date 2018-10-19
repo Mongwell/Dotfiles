@@ -53,6 +53,7 @@ ZSH_THEME="agnoster"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git rvm catimg)
 
+source ~/.bashrc
 source $ZSH/oh-my-zsh.sh
 
 #spaceship installation
@@ -65,18 +66,15 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+ #Preferred editor for local and remote sessions
+ if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='nvim'
+ fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
-
-# ssh
-export SSH_KEY_PATH="~/.ssh/rsa_id"
 
 # cargo
 export PATH=/home/mongwell/.cargo/bin:$PATH
@@ -90,13 +88,12 @@ export PATH=/home/mongwell/.cargo/bin:$PATH
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 source ~/.bash_aliases
+source /etc/profile.d/autojump.zsh
 
 
 # Custom Functions
 
-cc() {
-    sourceFile=$1
-    binFile=${sourceFile:0:${#sourceFile} - 2} 
-    gcc -std=c99 -Wall $sourceFile -o $binFile
-}
 
+# ssh
+export SSH_KEY_PATH=~/.ssh
+eval $(keychain --eval --quiet $SSH_KEY_PATH/id_rsa_github*.key)

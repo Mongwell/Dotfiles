@@ -223,10 +223,8 @@ client.placeholder      $bg    $bg        $fg  $bg       $bg
 
 client.background       $bg
 
-# Start polybar to display a workspace bar 
-#bar {
+# Start polybar to display a workspace bar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
-#}
 
 # mouse focus on hover
 focus_follows_mouse yes
@@ -263,4 +261,3 @@ exec_always compton --config ~/.config/compton.conf -bCGfc
 exec --no-startup-id xinput --set-prop 10 'libinput Accel Speed' -0.750
 exec --no-startup-id ~/.local/bin/touchpad.sh
 exec --no-startup-id ~/.local/bin/distorted-pixelate-lock.sh -p -g -- scrot -z
-exec --no-startup-id xautolock -time 20 -locker /home/mongwell/.local/bin/distorted-pixelate-lock.sh -killtime 10 -killer "systemctl suspend"
