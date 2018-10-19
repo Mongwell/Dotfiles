@@ -32,7 +32,7 @@ font-6 = Termsynu:size=10:antialias=false;4
 
 modules-left = powermenu volume 
 modules-center = weather
-modules-right = backlight bluetooth wireless-network wired-network battery date 
+modules-right = backlight bluetooth wireless-network wireless-network2 wired-network battery date 
 
 [bar/bottom]
 monitor = ${bar/top.monitor}
@@ -139,7 +139,7 @@ override-redirect = true
 wm-restack = i3
 
 ws-icon-0 = termite;
-ws-icon-1 = chrom;
+/*ws-icon-1 = 1;*/
 ws-icon-2 = code;
 ws-icon-3 = music;
 ws-icon-4 = irssi;
@@ -282,6 +282,29 @@ Controls-0-3-exec = playerctl next
 [module/wireless-network]
 type = internal/network
 interface = wlp3s0
+interval = 3.0
+ping-interval = 10
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid%
+label-disconnected =    not connected
+label-disconnected-foreground = #66
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+
+animation-packetloss-0 = 
+animation-packetloss-0-foreground = #ffa64c
+animation-packetloss-1 = 
+animation-packetloss-1-foreground = ${bar/top.foreground}
+animation-packetloss-framerate = 500
+
+[module/wireless-network2]
+type = internal/network
+interface = wlp0s20f0u2u1
 interval = 3.0
 ping-interval = 10
 
