@@ -48,15 +48,14 @@ Plug 'vim-airline/vim-airline-themes'
 
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/completion-nvim'
-Plug 'tpope/vim-surround'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
+Plug 'mbbill/undotree'
+Plug 'brooth/far.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': 'TSUpdate'}
+Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
-Plug 'brooth/far.vim'
-Plug 'mbbill/undotree'
-Plug 'kyazdani42/nvim-web-devicons'
 
 """ Fuzzy Find
 Plug 'nvim-lua/plenary.nvim'
@@ -64,6 +63,13 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
+
+"" Non-Plugin Mapping
+let mapleader = " "
+nnoremap <silent> <leader>l :noh<CR>
+nnoremap <leader>o :Lexplore<CR>
+nnoremap <leader>vl :set scrollbind<CR>
+nnoremap <leader>vu :set noscrollbind<CR>
 
 "" Plugin Configuration
 
@@ -93,16 +99,27 @@ let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
-let g:netrw_winsize = 15
+let g:netrw_winsize = 20
 let g:netrw_keepdir = 0
 
+
 """ Airline
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
 let g:airline_powerline_fonts = 1
+
+""" Fugitive
+nnoremap <leader>gs :G<CR>
+nnoremap <leader>gc :G commit<CR>
+nnoremap <leader>gp :G push<CR>
+nnoremap <leader>gvd :Gvdiffsplit<CR>
+nnoremap <leader>gl :G log<CR>
 
 """ Markdown Preview
 let g:mkdp_auto_close = 1
 let g:mkdp_refresh_slow = 1
+nnoremap <leader>mdp :MarkdownPreview<CR>
+nnoremap <leader>mdc :MarkdownPreviewStop<CR>
 
 "" Colorscheme
 set termguicolors
@@ -110,17 +127,6 @@ syntax on
 set background=dark
 let g:airline_theme='onedark'
 colorscheme onedark
-
-"" Mapping
-let mapleader = " "
-nnoremap <silent> <leader>l :noh<CR>
-nnoremap <leader>gs :G<CR>
-nnoremap <leader>gc :G commit<CR>
-nnoremap <leader>gp :G push<CR>
-nnoremap <leader>o :Lexplore<CR>
-nnoremap <leader>vl :set scrollbind<CR>
-nnoremap <leader>vu :set noscrollbind<CR>
-nnoremap <leader>mp :MarkdownPreview<CR>
 
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
