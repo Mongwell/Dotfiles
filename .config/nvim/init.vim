@@ -59,7 +59,7 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': 
 
 """ Fuzzy Find
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope-fzy-native.nvim'
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
 Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
@@ -114,6 +114,16 @@ nnoremap <leader>gc :G commit<CR>
 nnoremap <leader>gp :G push<CR>
 nnoremap <leader>gvd :Gvdiffsplit<CR>
 nnoremap <leader>gl :G log<CR>
+
+""" Telescope
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>ft <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fc <cmd>Telescope current_buffer_fuzzy_find<cr>
+nnoremap <leader>fgf <cmd>Telescope git_files<cr>
+nnoremap <leader>fgc <cmd>Telescope git_commits<cr>
+nnoremap <leader>fgh <cmd>Telescope git_bcommits<cr>
+nnoremap <leader>fgb <cmd>Telescope git_branches<cr>
 
 """ Markdown Preview
 let g:mkdp_auto_close = 1
