@@ -47,6 +47,10 @@ return packer.startup(function(use)
     use "arcticicestudio/nord-vim"
     use "overcache/NeoSolarized"
 
+    -- Airline
+    use "vim-airline/vim-airline"
+    use "vim-airline/vim-airline-themes"
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
