@@ -39,6 +39,7 @@ local options = {
     splitright = true,
     completeopt = { "menuone", "preview", "noinsert", "noselect" },
     hlsearch = true,
+    termguicolors = true,
 }
 
 for k, v in pairs(options) do

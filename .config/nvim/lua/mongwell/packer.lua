@@ -41,6 +41,12 @@ return packer.startup(function(use)
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
 
+    -- Colorschemes
+    use "joshdick/onedark.vim"
+    use "mhartington/oceanic-next"
+    use "arcticicestudio/nord-vim"
+    use "overcache/NeoSolarized"
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
