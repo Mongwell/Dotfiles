@@ -51,6 +51,14 @@ return packer.startup(function(use)
     use "vim-airline/vim-airline"
     use "vim-airline/vim-airline-themes"
 
+    -- LSP, Completion, Snippets
+    use "hrsh7th/nvim-cmp"
+    use "hrsh7th/cmp-buffer"
+    use "hrsh7th/cmp-path"
+    use "saadparwaiz1/cmp_luasnip"
+    use "L3MON4D3/LuaSnip"
+    use "rafamadriz/friendly-snippets"
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
