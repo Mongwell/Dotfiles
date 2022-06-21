@@ -46,6 +46,8 @@ return packer.startup(function(use)
     use "mhartington/oceanic-next"
     use "arcticicestudio/nord-vim"
     use "overcache/NeoSolarized"
+    use "rebelot/kanagawa.nvim"
+    use "folke/tokyonight.nvim"
 
     -- Airline
     use "vim-airline/vim-airline"
