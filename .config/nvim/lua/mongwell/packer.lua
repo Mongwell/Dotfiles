@@ -51,11 +51,19 @@ return packer.startup(function(use)
     use "vim-airline/vim-airline"
     use "vim-airline/vim-airline-themes"
 
-    -- LSP, Completion, Snippets
+    -- LSP
+    use "neovim/nvim-lspconfig"
+    use "williamboman/nvim-lsp-installer"
+
+    -- Completion
     use "hrsh7th/nvim-cmp"
     use "hrsh7th/cmp-buffer"
     use "hrsh7th/cmp-path"
     use "saadparwaiz1/cmp_luasnip"
+    use "hrsh7th/cmp-nvim-lsp"
+    use "hrsh7th/cmp-nvim-lua"
+
+    -- Snippets
     use "L3MON4D3/LuaSnip"
     use "rafamadriz/friendly-snippets"
 
