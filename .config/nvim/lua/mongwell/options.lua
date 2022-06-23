@@ -2,7 +2,7 @@ local options = {
     -- Numbering
     relativenumber = true,
     number = true,
-    
+
     -- Tab spacing
     tabstop = 4,
     softtabstop = 4,
@@ -10,19 +10,19 @@ local options = {
     expandtab = true,
     autoindent = true,
     smartindent = true,
-    
+
     -- History
     swapfile = false,
     backup = false,
     undodir = os.getenv("HOME").."/.vim/undodir",
     undofile = true,
     hidden = true,
-    
+
     -- Search
     ignorecase = true,
     smartcase = true,
     incsearch = true,
-    
+
     errorbells = false,
     wrap = false,
     ruler = true,
@@ -43,7 +43,7 @@ local options = {
 }
 
 for k, v in pairs(options) do
-	vim.opt[k] = v
+    vim.opt[k] = v
 end
 
 vim.cmd "set matchpairs+=<:>"
