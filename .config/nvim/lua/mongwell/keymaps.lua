@@ -42,6 +42,18 @@ keymap("n", "<leader>l", ":noh<CR>", opts)
 keymap("n", "<leader>vl", ":set scrollbind<CR>", opts)
 keymap("n", "<leader>vu", ":set noscrollbind<CR>", opts)
 
+-- Telescope
+keymap("n", "<leader>ff", ":Telescope find_files theme=dropdown<CR>", opts)
+keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
+keymap("n", "<leader>fb", ":Telescope buffers theme=dropdown<CR>", opts)
+keymap("n", "<leader>fc", ":Telescope current_buffer_fuzzy_find<CR>", opts)
+keymap("n", "<leader>fgf", ":Telescope git_files theme=dropdown<CR>", opts)
+keymap("n", "<leader>fgc", ":Telescope git_commits<CR>", opts)
+keymap("n", "<leader>fgh", ":Telescope git_bcommits theme=dropdown<CR>", opts)
+keymap("n", "<leader>fgb", ":Telescope git_branches<CR>", opts)
+keymap("n", "<leader>fd", ":Telescope diagnostics<CR> theme=ivy", opts)
+keymap("n", "<leader>fr", ":Telescope lsp_references<CR> theme=ivy", opts)
+
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
