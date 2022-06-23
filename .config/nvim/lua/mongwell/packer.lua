@@ -73,8 +73,9 @@ return packer.startup(function(use)
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
     -- Telescope
-    use {"nvim-telescope/telescope-fzf-native.nvim", run = "make" }
-    use "nvim-telescope/telescope.nvim"
+    use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
+    use { "nvim-telescope/telescope.nvim",
+        cmd = "Telescope", config = [[require("mongwell.telescope")]] }
 
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
