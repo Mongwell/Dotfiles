@@ -77,6 +77,10 @@ return packer.startup(function(use)
     use { "nvim-telescope/telescope.nvim",
         cmd = "Telescope", config = [[require("mongwell.telescope")]] }
 
+    -- Fun
+    use "tjdevries/train.nvim"
+
+
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then

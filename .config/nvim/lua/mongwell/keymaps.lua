@@ -55,6 +55,11 @@ keymap("n", "<leader>fd", ":Telescope diagnostics<CR> theme=ivy", opts)
 keymap("n", "<leader>fr", ":Telescope lsp_references<CR> theme=ivy", opts)
 keymap("n", "<leader>fk", ":Telescope treesitter<CR>", opts)
 
+-- Trainer
+keymap("n", "<leader>trh", ":TrainUpDown<CR>", opts)
+keymap("n", "<leader>trw", ":TrainWord<CR>", opts)
+keymap("n", "<leader>tro", ":TrainTextObj<CR>", opts)
+
 -- Visual --
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
