@@ -69,8 +69,11 @@ return packer.startup(function(use)
     use "L3MON4D3/LuaSnip"
     use "rafamadriz/friendly-snippets"
 
+    -- Treesitter
+    use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+
     -- Telescope
-    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    use {"nvim-telescope/telescope-fzf-native.nvim", run = "make" }
     use "nvim-telescope/telescope.nvim"
 
     -- Automatically set up your configuration after cloning packer.nvim
