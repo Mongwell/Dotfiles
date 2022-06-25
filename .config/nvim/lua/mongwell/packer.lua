@@ -77,6 +77,9 @@ return packer.startup(function(use)
     use { "nvim-telescope/telescope.nvim",
         cmd = "Telescope", config = [[require("mongwell.telescope")]] }
 
+    -- Various Tools
+    use "windwp/nvim-autopairs"
+
     -- Fun
     use "tjdevries/train.nvim"
 
