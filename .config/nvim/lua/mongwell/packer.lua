@@ -79,6 +79,7 @@ return packer.startup(function(use)
 
     -- Various Tools
     use "windwp/nvim-autopairs"
+    use "numToStr/Comment.nvim"
 
     -- Fun
     use "tjdevries/train.nvim"
