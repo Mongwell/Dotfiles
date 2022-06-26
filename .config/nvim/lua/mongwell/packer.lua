@@ -77,6 +77,9 @@ return packer.startup(function(use)
     use { "nvim-telescope/telescope.nvim",
         cmd = "Telescope", config = [[require("mongwell.telescope")]] }
 
+    -- Git
+    use "lewis6991/gitsigns.nvim"
+
     -- Various Tools
     use "windwp/nvim-autopairs"
     use "numToStr/Comment.nvim"

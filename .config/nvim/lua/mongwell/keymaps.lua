@@ -55,6 +55,16 @@ keymap("n", "<leader>fd", ":Telescope diagnostics<CR> theme=ivy", opts)
 keymap("n", "<leader>fr", ":Telescope lsp_references<CR> theme=ivy", opts)
 keymap("n", "<leader>fk", ":Telescope treesitter<CR>", opts)
 
+-- Gitsigns
+keymap("n", "<leader>gbt", ":Gitsigns blame_line", opts)
+keymap("n", "<leader>gdt", ":Gitsigns toggle_deleted<CR>", opts)
+keymap("n", "<leader>hP", ":Gitsigns preview_hunk<CR>", opts)
+keymap("n", "<leader>hn", ":Gitsigns next_hunk<CR>", opts)
+keymap("n", "<leader>hp", ":Gitsigns prev_hunk<CR>", opts)
+keymap("n", "<leader>hs", ":Gitsigns stage_hunk<CR>", opts)
+keymap("n", "<leader>hr", ":Gitsigns undo_stage_hunk<CR>", opts)
+keymap("n", "<leader>gsd", ":Gitsigns diffthis<CR>", opts)
+
 -- Trainer
 keymap("n", "<leader>trh", ":TrainUpDown<CR>", opts)
 keymap("n", "<leader>trw", ":TrainWord<CR>", opts)
