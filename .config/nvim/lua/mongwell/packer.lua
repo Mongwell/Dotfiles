@@ -75,7 +75,7 @@ return packer.startup(function(use)
 
     -- Nvim Tree
     use { "kyazdani42/nvim-tree.lua",
-            requires = { "kyazdani42/nvim-web-devicons" }
+        requires = { "kyazdani42/nvim-web-devicons" }
     }
 
     -- Telescope
@@ -97,6 +97,6 @@ return packer.startup(function(use)
     -- Automatically set up your configuration after cloning packer.nvim
     -- Put this at the end after all plugins
     if PACKER_BOOTSTRAP then
-    require("packer").sync()
+        require("packer").sync()
     end
 end)
