@@ -4,4 +4,5 @@ if not status_ok then
 end
 
 require "mongwell.lsp.lsp-installer"
+require "mongwell.lsp.null_ls"
 require "mongwell.lsp.handlers".setup()

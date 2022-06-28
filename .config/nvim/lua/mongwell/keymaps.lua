@@ -43,6 +43,9 @@ keymap("n", "<leader>l", ":noh<CR>", opts)
 keymap("n", "<leader>vl", ":set scrollbind<CR>", opts)
 keymap("n", "<leader>vu", ":set noscrollbind<CR>", opts)
 
+-- LSP related
+keymap("n", "<leader>fmt", ":Format<CR>", opts)
+
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files theme=dropdown<CR>", opts)
 keymap("n", "<leader>ft", ":Telescope live_grep<CR>", opts)
