@@ -60,7 +60,7 @@ keymap("n", "<leader>fr", ":Telescope lsp_references<CR> theme=ivy", opts)
 keymap("n", "<leader>fk", ":Telescope treesitter<CR>", opts)
 
 -- Gitsigns
-keymap("n", "<leader>gbt", ":Gitsigns blame_line", opts)
+keymap("n", "<leader>gb", ":Gitsigns blame_line<CR>", opts)
 keymap("n", "<leader>gdt", ":Gitsigns toggle_deleted<CR>", opts)
 keymap("n", "<leader>hP", ":Gitsigns preview_hunk<CR>", opts)
 keymap("n", "<leader>hn", ":Gitsigns next_hunk<CR>", opts)
