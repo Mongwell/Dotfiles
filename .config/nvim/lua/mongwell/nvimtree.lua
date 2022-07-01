@@ -56,6 +56,7 @@ nvim_tree.setup {
     },
     view = {
         width = 30,
+        adaptive_size = true,
         relativenumber = true, -- looks ugly but good for getting around
         mappings = {
             custom_only = false,
