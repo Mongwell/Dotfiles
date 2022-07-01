@@ -48,6 +48,7 @@ return packer.startup(function(use)
     use "overcache/NeoSolarized"
     use "rebelot/kanagawa.nvim"
     use "folke/tokyonight.nvim"
+    use "morhetz/gruvbox"
 
     -- Airline
     use "vim-airline/vim-airline"
