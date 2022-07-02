@@ -69,6 +69,9 @@ keymap("n", "<leader>hs", ":Gitsigns stage_hunk<CR>", opts)
 keymap("n", "<leader>hr", ":Gitsigns undo_stage_hunk<CR>", opts)
 keymap("n", "<leader>gsd", ":Gitsigns diffthis<CR>", opts)
 
+-- Toggleterm
+keymap("n", "<C-g>", ":lua _LAZYGIT_TOGGLE()<CR>", opts)
+
 -- Trainer
 keymap("n", "<leader>trh", ":TrainUpDown<CR>", opts)
 keymap("n", "<leader>trw", ":TrainWord<CR>", opts)
