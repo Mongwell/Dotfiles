@@ -85,6 +85,7 @@ return packer.startup(function(use)
         cmd = "Telescope", config = [[require("mongwell.telescope")]] }
 
     -- Git
+    use "tpope/vim-fugitive"
     use "lewis6991/gitsigns.nvim"
 
     -- Various Tools

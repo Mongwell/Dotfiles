@@ -59,6 +59,13 @@ keymap("n", "<leader>fd", ":Telescope diagnostics<CR> theme=ivy", opts)
 keymap("n", "<leader>fr", ":Telescope lsp_references<CR> theme=ivy", opts)
 keymap("n", "<leader>fk", ":Telescope treesitter<CR>", opts)
 
+-- Fugitive
+keymap("n", "<leader>gs", ":G<CR>", opts)
+keymap("n", "<leader>gc", ":G commit<CR>", opts)
+keymap("n", "<leader>gp", ":G push<CR>", opts)
+keymap("n", "<leader>gvd", ":Gvdiffsplit<CR>", opts)
+keymap("n", "<leader>gl", ":G log<CR>", opts)
+
 -- Gitsigns
 keymap("n", "<leader>gb", ":Gitsigns blame_line<CR>", opts)
 keymap("n", "<leader>gdt", ":Gitsigns toggle_deleted<CR>", opts)
