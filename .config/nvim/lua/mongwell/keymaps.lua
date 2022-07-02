@@ -74,7 +74,7 @@ keymap("n", "<leader>hn", ":Gitsigns next_hunk<CR>", opts)
 keymap("n", "<leader>hp", ":Gitsigns prev_hunk<CR>", opts)
 keymap("n", "<leader>hs", ":Gitsigns stage_hunk<CR>", opts)
 keymap("n", "<leader>hr", ":Gitsigns undo_stage_hunk<CR>", opts)
-keymap("n", "<leader>gsd", ":Gitsigns diffthis<CR>", opts)
+keymap("n", "<leader>gds", ":Gitsigns diffthis<CR>", opts)
 
 -- Toggleterm
 keymap("n", "<C-g>", ":lua _LAZYGIT_TOGGLE()<CR>", opts)
