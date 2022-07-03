@@ -40,6 +40,7 @@ return packer.startup(function(use)
     use "wbthomason/packer.nvim"
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
+    use "kyazdani42/nvim-web-devicons"
 
     -- Colorschemes
     use "joshdick/onedark.vim"
@@ -75,9 +76,7 @@ return packer.startup(function(use)
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
 
     -- Nvim Tree
-    use { "kyazdani42/nvim-tree.lua",
-        requires = { "kyazdani42/nvim-web-devicons" }
-    }
+    use "kyazdani42/nvim-tree.lua"
 
     -- Telescope
     use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
