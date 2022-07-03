@@ -92,6 +92,7 @@ return packer.startup(function(use)
     use "windwp/nvim-autopairs"
     use "numToStr/Comment.nvim"
     use "akinsho/toggleterm.nvim"
+    use { "echasnovski/mini.nvim", branch = "stable" }
 
     -- Fun
     use "tjdevries/train.nvim"
