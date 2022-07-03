@@ -43,13 +43,13 @@ return packer.startup(function(use)
     use "kyazdani42/nvim-web-devicons"
 
     -- Colorschemes
-    use "joshdick/onedark.vim"
-    use "mhartington/oceanic-next"
-    use "arcticicestudio/nord-vim"
-    use "overcache/NeoSolarized"
-    use "rebelot/kanagawa.nvim"
+    use "navarasu/onedark.nvim"
     use "folke/tokyonight.nvim"
+    use "rebelot/kanagawa.nvim"
+    use "marko-cerovac/material.nvim"
     use "morhetz/gruvbox"
+    use "sainnhe/sonokai"
+    use "glepnir/zephyr-nvim"
 
     -- Airline
     use "vim-airline/vim-airline"
