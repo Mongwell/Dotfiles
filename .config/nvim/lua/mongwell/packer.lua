@@ -95,7 +95,8 @@ return packer.startup(function(use)
     use { "echasnovski/mini.nvim", branch = "stable" }
 
     -- Fun
-    use "tjdevries/train.nvim"
+    use { "tjdevries/train.nvim",
+        cmd = { "TrainClear", "TrainTextObj", "TrainUpDown", "TrainWord", } }
 
 
     -- Automatically set up your configuration after cloning packer.nvim
