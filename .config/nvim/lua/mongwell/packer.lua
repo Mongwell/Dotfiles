@@ -47,7 +47,7 @@ return packer.startup(function(use)
     use "folke/tokyonight.nvim"
     use "rebelot/kanagawa.nvim"
     use "marko-cerovac/material.nvim"
-    use "morhetz/gruvbox"
+    use "sainnhe/gruvbox-material"
     use "sainnhe/sonokai"
     use "glepnir/zephyr-nvim"
 
