@@ -51,9 +51,8 @@ return packer.startup(function(use)
     use "sainnhe/sonokai"
     use "glepnir/zephyr-nvim"
 
-    -- Airline
-    use "vim-airline/vim-airline"
-    use "vim-airline/vim-airline-themes"
+    -- Status Line
+    use "nvim-lualine/lualine.nvim"
 
     -- LSP
     use "neovim/nvim-lspconfig"
