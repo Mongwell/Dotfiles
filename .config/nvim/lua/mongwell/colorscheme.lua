@@ -1,7 +1,7 @@
 local colorscheme = "tokyonight"
 
 -- Options
-vim.g.tokyonight_style = "storm"
+vim.g.tokyonight_style = "night"
 vim.g.sonokai_style = "andromeda"
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
