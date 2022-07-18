@@ -52,7 +52,7 @@ return packer.startup(function(use)
     use "glepnir/zephyr-nvim"
 
     -- Status Line
-    use "nvim-lualine/lualine.nvim"
+    use "glepnir/galaxyline.nvim"
 
     -- LSP
     use "neovim/nvim-lspconfig"
