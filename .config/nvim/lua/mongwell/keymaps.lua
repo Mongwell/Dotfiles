@@ -61,7 +61,6 @@ keymap("n", "<leader>fk", ":Telescope treesitter<CR>", opts)
 
 -- Fugitive
 keymap("n", "<leader>gs", ":G<CR>", opts)
-keymap("n", "<leader>gc", ":G commit<CR>", opts)
 keymap("n", "<leader>gp", ":G push<CR>", opts)
 keymap("n", "<leader>gvd", ":Gvdiffsplit<CR>", opts)
 keymap("n", "<leader>gl", ":G log<CR>", opts)
