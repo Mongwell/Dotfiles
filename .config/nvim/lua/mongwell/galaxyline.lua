@@ -170,7 +170,7 @@ gls.left[11] = {
 gls.left[12] = {
     DiagnosticInfo = {
         provider = 'DiagnosticInfo',
-        icon = '   ',
+        icon = '   ',
         highlight = { colors.blue, colors.bg },
     }
 }
