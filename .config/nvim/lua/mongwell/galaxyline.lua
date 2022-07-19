@@ -55,6 +55,14 @@ local checkwidth = function()
     return (squeeze_width > 40)
 end
 
+local function has_file_type()
+    local f_type = vim.bo.filetype
+    if not f_type or f_type == '' then
+        return false
+    end
+    return true
+end
+
 -- Left Side
 gls.left[1] = {
     FirstElement = {
