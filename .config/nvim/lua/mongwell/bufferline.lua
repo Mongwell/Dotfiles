@@ -70,18 +70,4 @@ bufferline.setup {
         separator_style = "slant", -- "slant" | "thick" | "thin" | { 'any', 'any' },
         enforce_regular_tabs = true,
     },
-    highlights = {
-        separator = {
-            guifg = { attribute = "bg", highlight = "TabLine" },
-            guibg = { attribute = "bg", highlight = "TabLine" },
-        },
-        separator_selected = {
-            guifg = { attribute = "bg", highlight = "#ff0000" },
-            guibg = { attribute = "bg", highlight = "#ff0000" },
-        },
-        separator_visible = {
-            guifg = { attribute = 'bg', highlight = '#ff0000' },
-            guibg = { attribute = 'bg', highlight = '#ff0000' }
-        },
-    }
 }
