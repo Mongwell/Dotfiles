@@ -92,6 +92,8 @@ return packer.startup(function(use)
     use "numToStr/Comment.nvim"
     use "akinsho/toggleterm.nvim"
     use { "echasnovski/mini.nvim", branch = "stable" }
+    use { "ellisonleao/glow.nvim",
+            cmd = { "Glow", "Glow!" }, config = [[require("mongwell.glow")]] }
 
     -- Fun
     use { "tjdevries/train.nvim",

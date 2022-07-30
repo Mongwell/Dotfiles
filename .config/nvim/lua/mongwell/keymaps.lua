@@ -80,6 +80,9 @@ keymap("n", "<leader>gds", ":Gitsigns diffthis<CR>", opts)
 -- Toggleterm
 keymap("n", "<C-g>", ":lua _LAZYGIT_TOGGLE()<CR>", opts)
 
+-- Glow Markdown Preview
+keymap("n", "<leader>mp", ":Glow<CR>", opts)
+
 -- Trainer
 keymap("n", "<leader>trh", ":TrainUpDown<CR>", opts)
 keymap("n", "<leader>trw", ":TrainWord<CR>", opts)
