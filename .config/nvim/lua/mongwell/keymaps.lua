@@ -32,9 +32,11 @@ keymap("n", "<C-Down>", ":resize -2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 
--- Navigate buffers
+-- Buffers
 keymap("n", "]b", ":bnext<CR>", opts)
 keymap("n", "[b", ":bprevious<CR>", opts)
+keymap("n", "<leader>q", ":Bdelete<CR>", opts)
+keymap("n", "<leader>w", ":Bwipeout<CR>", opts)
 
 -- Clear search
 keymap("n", "<leader>l", ":noh<CR>", opts)

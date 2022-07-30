@@ -53,7 +53,7 @@ return packer.startup(function(use)
 
     -- Status Line
     use "glepnir/galaxyline.nvim"
-    use "akinsho/bufferline.nvim"
+    use { "akinsho/bufferline.nvim", requires = "moll/vim-bbye" }
 
     -- LSP
     use "neovim/nvim-lspconfig"

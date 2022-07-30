@@ -37,8 +37,8 @@ end
 
 bufferline.setup {
     options = {
-        close_command = "bdelete! %d",
-        right_mouse_command = "bdelete! %d",
+        close_command = "Bdelete! %d",
+        right_mouse_command = "Bdelete! %d",
         left_mouse_command = "buffer %d",
 
         indicator_icon = '▎',
