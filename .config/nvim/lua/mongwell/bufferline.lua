@@ -41,11 +41,14 @@ bufferline.setup {
         right_mouse_command = "Bdelete! %d",
         left_mouse_command = "buffer %d",
 
-        indicator_icon = '▎',
         modified_icon = '●',
         close_icon = '',
         left_trunc_marker = '',
         right_trunc_marker = '',
+        indicator = {
+            style = "icon",
+            icon = '▎'
+        },
 
         max_name_length = 30,
         max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
