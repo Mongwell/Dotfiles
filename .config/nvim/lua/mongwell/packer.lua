@@ -91,6 +91,7 @@ return packer.startup(function(use)
     -- Various Behavior
     use "windwp/nvim-autopairs"
     use "ahmedkhalf/project.nvim"
+    use "lukas-reineke/indent-blankline.nvim"
 
     -- Various Tools
     use "numToStr/Comment.nvim"
