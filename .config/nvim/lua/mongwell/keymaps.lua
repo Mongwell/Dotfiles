@@ -60,6 +60,7 @@ keymap("n", "<leader>fgb", ":Telescope git_branches<CR>", opts)
 keymap("n", "<leader>fd", ":Telescope diagnostics<CR> theme=ivy", opts)
 keymap("n", "<leader>fr", ":Telescope lsp_references<CR> theme=ivy", opts)
 keymap("n", "<leader>fk", ":Telescope treesitter<CR>", opts)
+keymap("n", "<leader>fp", ":Telescope projects theme=dropdown<CR>", opts)
 
 -- Fugitive
 keymap("n", "<leader>gs", ":G<CR>", opts)

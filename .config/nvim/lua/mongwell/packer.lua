@@ -88,8 +88,11 @@ return packer.startup(function(use)
     use "tpope/vim-fugitive"
     use "lewis6991/gitsigns.nvim"
 
-    -- Various Tools
+    -- Various Behavior
     use "windwp/nvim-autopairs"
+    use "ahmedkhalf/project.nvim"
+
+    -- Various Tools
     use "numToStr/Comment.nvim"
     use "akinsho/toggleterm.nvim"
     use { "echasnovski/mini.nvim", branch = "stable" }
@@ -97,8 +100,6 @@ return packer.startup(function(use)
             cmd = { "Glow", "Glow!" }, config = [[require("mongwell.glow")]] }
     use "brooth/far.vim"
     use "mbbill/undotree"
-    use "ahmedkhalf/project.nvim"
-    use "lukas-reineke/indent-blankline.nvim"
 
     -- Fun
     use { "tjdevries/train.nvim",
