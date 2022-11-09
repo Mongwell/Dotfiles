@@ -3,6 +3,6 @@ if not status_ok then
     return
 end
 
-glow.setup({
+glow.setup {
     width = 180,
-})
+}

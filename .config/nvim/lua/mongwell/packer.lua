@@ -97,7 +97,7 @@ return packer.startup(function(use)
     use "akinsho/toggleterm.nvim"
     use { "echasnovski/mini.nvim", branch = "stable" }
     use { "ellisonleao/glow.nvim",
-            cmd = { "Glow", "Glow!" }, config = [[require("mongwell.glow")]] }
+        cmd = { "Glow", "Glow!" }, config = [[require("mongwell.glow")]] }
     use "brooth/far.vim"
     use "mbbill/undotree"
 
