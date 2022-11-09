@@ -5,6 +5,9 @@ end
 
 local actions = require "telescope.actions"
 
+telescope.load_extension('fzf')
+telescope.load_extension('projects')
+
 telescope.setup {
     defaults = {
 
@@ -26,12 +29,31 @@ telescope.setup {
             },
         },
     },
+
+    pickers = {
+        find_files = {
+            theme = "dropdown",
+        },
+        buffers = {
+            theme = "dropdown",
+        },
+        git_files = {
+            theme = "dropdown",
+        },
+        git_bcommits = {
+            theme = "dropdown",
+        },
+        diagnostics = {
+            theme = "ivy",
+        },
+        lsp_references = {
+            theme = "ivy",
+        },
+    },
+
     extensions = {
         fzf = {
             override_generic_sorter = true,
         }
     }
 }
-
-telescope.load_extension('fzf')
-telescope.load_extension('projects')
