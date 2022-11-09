@@ -4,3 +4,4 @@ if not status_ok then
 end
 
 require "mongwell.treesitter.config"
+require "mongwell.treesitter.context"

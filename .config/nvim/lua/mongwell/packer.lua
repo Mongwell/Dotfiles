@@ -74,6 +74,7 @@ return packer.startup(function(use)
 
     -- Treesitter
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
+    use "nvim-treesitter/nvim-treesitter-context"
 
     -- Nvim Tree
     use "kyazdani42/nvim-tree.lua"
@@ -96,6 +97,8 @@ return packer.startup(function(use)
             cmd = { "Glow", "Glow!" }, config = [[require("mongwell.glow")]] }
     use "brooth/far.vim"
     use "mbbill/undotree"
+    use "ahmedkhalf/project.nvim"
+    use "lukas-reineke/indent-blankline.nvim"
 
     -- Fun
     use { "tjdevries/train.nvim",
