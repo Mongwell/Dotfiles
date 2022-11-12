@@ -56,8 +56,9 @@ return packer.startup(function(use)
     use { "akinsho/bufferline.nvim", requires = "moll/vim-bbye" }
 
     -- LSP
+    use "williamboman/mason.nvim"
+    use "williamboman/mason-lspconfig.nvim"
     use "neovim/nvim-lspconfig"
-    use "williamboman/nvim-lsp-installer"
     use "jose-elias-alvarez/null-ls.nvim"
 
     -- Completion

@@ -3,6 +3,6 @@ if not status_ok then
     return
 end
 
-require "mongwell.lsp.lsp-installer"
+require "mongwell.lsp.mason"
 require "mongwell.lsp.null_ls"
 require "mongwell.lsp.handlers".setup()
