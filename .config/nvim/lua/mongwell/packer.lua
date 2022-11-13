@@ -102,6 +102,7 @@ return packer.startup(function(use)
         cmd = { "Glow", "Glow!" }, config = [[require("mongwell.glow")]] }
     use "brooth/far.vim"
     use "mbbill/undotree"
+    use "goolord/alpha-nvim"
 
     -- Fun
     use { "tjdevries/train.nvim",
