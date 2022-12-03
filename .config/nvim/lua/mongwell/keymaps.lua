@@ -104,6 +104,9 @@ keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 -- Don't yank to register when pasting in visual mode
 keymap("v", "p", '"_dP', opts)
 
+-- Interleave function
+keymap("v", "li", "<esc>:lua InterleaveVisual()<CR><esc>", opts)
+
 -- Visual Block --
 -- Move text up and down
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
