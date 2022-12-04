@@ -45,6 +45,9 @@ keymap("n", "<leader>l", ":noh<CR>", opts)
 keymap("n", "<leader>vl", ":set scrollbind<CR>", opts)
 keymap("n", "<leader>vu", ":set noscrollbind<CR>", opts)
 
+-- Paste output of :messages to buffer
+keymap("n", "<leader>pm", ":put =execute('messages')<CR>", opts)
+
 -- LSP related
 keymap("n", "<leader>fmt", ":lua Format()<CR>", opts)
 
