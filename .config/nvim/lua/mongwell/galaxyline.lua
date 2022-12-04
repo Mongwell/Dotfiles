@@ -17,7 +17,7 @@ local colors = {
     darkblue = '#081633',
     green = '#afd700',
     orange = '#FF8800',
-    purple = '#5d4d7a',
+    violet = '#5d4d7a',
     magenta = '#c678dd',
     blue = '#51afef';
     red = '#ec5f67'
@@ -31,6 +31,8 @@ local mode_color = function()
         v = colors.magenta,
         [''] = colors.magenta,
         V = colors.magenta,
+        s = colors.violet,
+        S = colors.violet,
         R = colors.red,
         t = colors.cyan,
     }
