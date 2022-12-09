@@ -33,4 +33,6 @@ masonlsp.setup {
 masonlsp.setup_handlers({
     require("mongwell.lsp.settings.defaults").setup_handler,
     ["sumneko_lua"] = require("mongwell.lsp.settings.sumneko_lua").setup_handler,
+    ["pylsp"] = require("mongwell.lsp.settings.pylsp").setup_handler,
+    ["clangd"] = require("mongwell.lsp.settings.clangd").setup_handler,
 })
