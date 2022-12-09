@@ -13,10 +13,9 @@ null_ls.setup {
     sources = {
         -- Add sources here as needed
         diagnostics.cpplint,
-        -- formatting.clang_format.with { extra_args = { "--Werror", "--style", "{IndentWidth: 4}" } },
 
         diagnostics.pydocstyle,
-        diagnostics.pylint,
+        diagnostics.flake8,
         formatting.black.with({ extra_args = { "--fast", "--line-length", "100" } })
     }
 }
