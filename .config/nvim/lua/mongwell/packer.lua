@@ -93,6 +93,7 @@ return packer.startup(function(use)
     use "windwp/nvim-autopairs"
     use "ahmedkhalf/project.nvim"
     use "lukas-reineke/indent-blankline.nvim"
+    use "kosayoda/nvim-lightbulb"
 
     -- Various Tools
     use "numToStr/Comment.nvim"
