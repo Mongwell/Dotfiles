@@ -47,4 +47,3 @@ for k, v in pairs(options) do
 end
 
 vim.cmd "set matchpairs+=<:>"
-vim.cmd "set iskeyword-=_"
