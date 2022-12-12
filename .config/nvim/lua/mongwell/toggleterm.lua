@@ -3,20 +3,28 @@ if not status_ok then
     return
 end
 
+local function term_size(term)
+    if term.direction == "horizontal" then
+        return 20
+    elseif term.direction == "vertical" then
+        return vim.o.columns * 0.4
+    end
+end
+
 toggleterm.setup {
-    size = 20,
+    size = term_size,
     open_mapping = [[<c-\>]],
     direction = "horizontal",
     hide_numbers = true,
-	shade_terminals = true,
+    shade_terminals = true,
     persist_size = true,
     shell = vim.o.shell,
     float_opts = {
         border = "curved",
-		highlights = {
-			border = "Normal",
-			background = "Normal",
-		},
+        highlights = {
+            border = "Normal",
+            background = "Normal",
+        },
     }
 }
 
