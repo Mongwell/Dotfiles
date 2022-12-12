@@ -104,6 +104,7 @@ return packer.startup(function(use)
     use "brooth/far.vim"
     use "mbbill/undotree"
     use "goolord/alpha-nvim"
+    use "goerz/jupytext.vim"
 
     -- Fun
     use { "tjdevries/train.nvim",
