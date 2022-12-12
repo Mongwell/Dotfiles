@@ -83,6 +83,9 @@ keymap("n", "<leader>gds", ":Gitsigns diffthis<CR>", opts)
 
 -- Toggleterm
 keymap("n", "<C-g>", ":lua _LAZYGIT_TOGGLE()<CR>", opts)
+keymap("n", "<C-p>", ":lua _IPY_TOGGLE()<CR>", opts)
+keymap("v", "<leader>x", ":ToggleTermSendVisualSelection 1<CR>", opts)
+keymap("n", "<leader>x", ":ToggleTermSendCurrentLine 1<CR>", opts)
 
 --UndoTree
 keymap("n", "<leader>ut", ":UndotreeToggle<CR>", opts)
