@@ -14,6 +14,9 @@ null_ls.setup {
         -- Add sources here as needed
         diagnostics.cpplint,
 
+        diagnostics.cmake_lint,
+        formatting.cmake_format,
+
         diagnostics.pydocstyle,
         diagnostics.flake8,
         formatting.black.with({ extra_args = { "--fast", "--line-length", "100" } })
