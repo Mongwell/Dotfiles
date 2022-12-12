@@ -18,7 +18,7 @@ null_ls.setup {
         formatting.cmake_format,
 
         diagnostics.pydocstyle,
-        diagnostics.flake8,
+        diagnostics.flake8.with({ extra_args = { "--max-line-length", "100" } }),
         formatting.black.with({ extra_args = { "--fast", "--line-length", "100" } })
     }
 }
