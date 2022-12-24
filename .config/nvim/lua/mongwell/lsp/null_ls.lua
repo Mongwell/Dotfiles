@@ -12,7 +12,7 @@ null_ls.setup {
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
     sources = {
         -- Add sources here as needed
-        diagnostics.cpplint,
+        diagnostics.cpplint.with({ args = { "--filter", "-legal/copyright", "$FILENAME" } }),
 
         diagnostics.cmake_lint,
         formatting.cmake_format,
