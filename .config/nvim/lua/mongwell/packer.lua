@@ -41,6 +41,7 @@ return packer.startup(function(use)
     use "nvim-lua/popup.nvim"
     use "nvim-lua/plenary.nvim"
     use "kyazdani42/nvim-web-devicons"
+    use "stevearc/dressing.nvim"
 
     -- Colorschemes
     use "navarasu/onedark.nvim"

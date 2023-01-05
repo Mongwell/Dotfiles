@@ -1,6 +1,7 @@
 require "mongwell.options"
 require "mongwell.keymaps"
 require "mongwell.packer"
+require "mongwell.dressing"
 require "mongwell.colorscheme"
 require "mongwell.icons"
 require "mongwell.galaxyline"
