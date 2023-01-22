@@ -95,6 +95,8 @@ return packer.startup(function(use)
     use "ahmedkhalf/project.nvim"
     use "lukas-reineke/indent-blankline.nvim"
     use "kosayoda/nvim-lightbulb"
+    use { "nvim-orgmode/orgmode",
+        requires = { "lukas-reineke/headlines.nvim",  "akinsho/org-bullets.nvim" } }
 
     -- Various Tools
     use "numToStr/Comment.nvim"
