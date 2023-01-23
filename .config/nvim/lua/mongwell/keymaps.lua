@@ -23,7 +23,7 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- NvimTree
-keymap("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -93,9 +93,9 @@ keymap("n", "<leader>ut", ":UndotreeToggle<CR>", opts)
 keymap("n", "<leader>mp", ":Glow<CR>", opts)
 
 -- Trainer
-keymap("n", "<leader>ph", ":TrainUpDown<CR>", opts)
-keymap("n", "<leader>pw", ":TrainWord<CR>", opts)
-keymap("n", "<leader>po", ":TrainTextObj<CR>", opts)
+keymap("n", "<leader>trh", ":TrainUpDown<CR>", opts)
+keymap("n", "<leader>trw", ":TrainWord<CR>", opts)
+keymap("n", "<leader>tro", ":TrainTextObj<CR>", opts)
 
 -- Visual --
 -- Stay in indent mode
