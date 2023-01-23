@@ -107,6 +107,7 @@ cmp.setup {
         end,
     },
     sources = {
+        { name = "orgmode" },
         { name = "nvim_lsp" },
         { name = "nvim_lua" },
         { name = "luasnip" },
