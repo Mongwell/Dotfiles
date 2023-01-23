@@ -82,9 +82,8 @@ return packer.startup(function(use)
     use "kyazdani42/nvim-tree.lua"
 
     -- Telescope
-    use { "nvim-telescope/telescope-fzf-native.nvim", run = "make" }
     use { "nvim-telescope/telescope.nvim",
-        cmd = "Telescope", config = [[require("mongwell.telescope")]] }
+        requires = { "nvim-telescope/telescope-fzf-native.nvim", run = "make" } }
 
     -- Git
     use "tpope/vim-fugitive"
