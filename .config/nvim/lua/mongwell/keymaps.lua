@@ -23,7 +23,7 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- NvimTree
-keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>o", ":NvimTreeToggle<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -36,6 +36,7 @@ keymap("n", "]b", ":bnext<CR>", opts)
 keymap("n", "[b", ":bprevious<CR>", opts)
 keymap("n", "<leader>q", ":Bdelete<CR>", opts)
 keymap("n", "<leader>w", ":Bwipeout<CR>", opts)
+keymap("n", "<leader>b", ":BufferLinePick<CR>", opts)
 
 -- Clear search
 keymap("n", "<leader>l", ":noh<CR>", opts)
