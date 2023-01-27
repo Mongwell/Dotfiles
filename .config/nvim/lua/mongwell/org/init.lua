@@ -1,3 +1,8 @@
+vim.api.nvim_create_autocmd('FileType', {
+    pattern = 'org*',
+    command = "setlocal colorcolumn= conceallevel=3 foldenable"
+})
+
 local org_ok, _ = pcall(require, "orgmode")
 if not org_ok then
     return
