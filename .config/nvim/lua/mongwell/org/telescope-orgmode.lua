@@ -5,7 +5,7 @@ end
 
 local function orgmode_telescope_maps()
     local opts = { noremap = true, silent = true }
-    vim.keymap.set('n', '<leader>nr', telescope.extensions.orgmode.refile_heading)
+    vim.keymap.set('n', '<leader>fnr', telescope.extensions.orgmode.refile_heading)
 end
 vim.api.nvim_create_autocmd('FileType', {
     pattern = 'org',
