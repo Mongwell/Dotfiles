@@ -1,6 +1,9 @@
 vim.api.nvim_create_autocmd('FileType', {
     pattern = 'org*',
-    command = "setlocal colorcolumn= conceallevel=3 foldenable"
+    callback = function ()
+        vim.opt_local.colorcolumn = ""
+        vim.opt_local.conceallevel = 3
+    end
 })
 
 local org_ok, _ = pcall(require, "orgmode")
