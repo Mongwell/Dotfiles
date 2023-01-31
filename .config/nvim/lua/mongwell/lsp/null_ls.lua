@@ -21,5 +21,7 @@ null_ls.setup {
         diagnostics.pydocstyle,
         diagnostics.flake8.with({ extra_args = { "--max-line-length", "100" } }),
         formatting.black.with({ extra_args = { "--fast", "--line-length", "100" } })
+        formatting.stylua,
+        diagnostics.luacheck,
     }
 }
