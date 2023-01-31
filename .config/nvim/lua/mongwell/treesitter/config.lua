@@ -20,9 +20,7 @@ configs.setup {
     },
 }
 
---  Fold using treesitter, but disabled by default
-vim.cmd [[
-    set foldmethod=expr
-    set foldexpr=nvim_treesitter#foldexpr()
-    set nofoldenable
-]]
+-- --  Fold using treesitter, but disabled by default
+vim.o.foldmethod = "expr"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldenable = 0
