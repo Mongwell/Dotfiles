@@ -3,9 +3,14 @@ if not telescope_ok then
     return
 end
 
+local ext_ok, _ = pcall(function() telescope.load_extension("orgmode") end)
+if not ext_ok then
+    return
+end
+
 local function orgmode_telescope_maps()
     local opts = { noremap = true, silent = true }
-    vim.keymap.set('n', '<leader>fnr', telescope.extensions.orgmode.refile_heading)
+    vim.keymap.set('n', '<leader>fnr', telescope.extensions.orgmode.refile_heading, opts)
 end
 vim.api.nvim_create_autocmd('FileType', {
     pattern = 'org',
