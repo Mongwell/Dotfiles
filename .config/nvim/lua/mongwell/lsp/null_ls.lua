@@ -12,7 +12,7 @@ null_ls.setup {
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
     sources = {
         -- Add sources here as needed
-        diagnostics.cpplint.with({ args = { 
+        diagnostics.cpplint.with({ args = {
             "--filter", "-legal/copyright,-build/include_subdir,-build/include_order,-build/header_guard", "$FILENAME" } }),
 
         diagnostics.cmake_lint,
@@ -20,7 +20,7 @@ null_ls.setup {
 
         diagnostics.pydocstyle,
         diagnostics.flake8.with({ extra_args = { "--max-line-length", "100" } }),
-        formatting.black.with({ extra_args = { "--fast", "--line-length", "100" } })
+        formatting.black.with({ extra_args = { "--fast", "--line-length", "100" } }),
         formatting.stylua,
         diagnostics.luacheck,
     }
