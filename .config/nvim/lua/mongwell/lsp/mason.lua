@@ -27,12 +27,12 @@ mason.setup {
 masonlsp.setup {
     -- A list of servers to automatically install if they're not already installed. Example: { "rust_analyzer@nightly", "sumneko_lua" }
     -- This setting has no relation with the `automatic_installation` setting.
-    ensure_installed = { "sumneko_lua" },
+    ensure_installed = { "lua_ls" },
 }
 
 masonlsp.setup_handlers({
     require("mongwell.lsp.settings.defaults").setup_handler,
-    ["sumneko_lua"] = require("mongwell.lsp.settings.sumneko_lua").setup_handler,
+    ["lua_ls"] = require("mongwell.lsp.settings.lua_ls").setup_handler,
     ["pylsp"] = require("mongwell.lsp.settings.pylsp").setup_handler,
     ["clangd"] = require("mongwell.lsp.settings.clangd").setup_handler,
 })
