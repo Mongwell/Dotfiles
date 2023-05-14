@@ -67,7 +67,7 @@ bufferline.setup {
         color_icons = true,
         show_buffer_icons = true,
         show_buffer_close_icons = true,
-        show_buffer_default_icon = false,
+
         show_close_icon = false,
         show_tab_indicators = true,
         separator_style = "slant", -- "slant" | "thick" | "thin" | { 'any', 'any' },
