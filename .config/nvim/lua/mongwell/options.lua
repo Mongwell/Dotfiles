@@ -2,6 +2,7 @@ local options = {
     -- Numbering
     relativenumber = true,
     number = true,
+    numberwidth = 2,
 
     -- Tab spacing
     tabstop = 4,

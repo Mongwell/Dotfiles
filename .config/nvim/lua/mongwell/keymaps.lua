@@ -111,7 +111,7 @@ keymap("v", "<A-k>", ":m .-2<CR>==", opts)
 keymap("v", "p", '"_dP', opts)
 
 -- Interleave function
-keymap("v", "li", "<esc>:lua InterleaveVisual()<CR><esc>", opts)
+keymap("v", "il", "<esc>:lua InterleaveVisual()<CR><esc>", opts)
 
 -- Visual Block --
 -- Move text up and down
