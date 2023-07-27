@@ -34,3 +34,21 @@ function Interleave(block_start, block_end, where)
        end
     end
 end
+
+function ToggleNumOpt()
+    local num = vim.o.number and 1 or 0
+    local relnum = vim.o.relativenumber and 1 or 0
+    local mask = relnum * 2 + num
+    mask = (mask + 1) % 4
+
+    if mask == 1 or mask == 3 then
+        vim.o.number = true
+    else
+        vim.o.number = false
+    end
+    if mask == 2 or mask == 3 then
+        vim.o.relativenumber = true
+    else
+        vim.o.relativenumber = false
+    end
+end

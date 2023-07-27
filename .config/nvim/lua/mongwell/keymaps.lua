@@ -109,6 +109,9 @@ keymap("v", "p", '"_dP', opts)
 -- Interleave function
 keymap("v", "il", "<esc>:lua InterleaveVisual()<CR><esc>", opts)
 
+-- Number toggle
+keymap("n", "<leader>n", ":lua ToggleNumOpt()<CR>", opts)
+
 -- Visual Block --
 -- Move text up and down
 keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
