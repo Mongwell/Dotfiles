@@ -86,9 +86,6 @@ keymap("n", "<leader>x", ":ToggleTermSendCurrentLine 1<CR>", opts)
 --UndoTree
 keymap("n", "<leader>ut", ":UndotreeToggle<CR>", opts)
 
--- Glow Markdown Preview
-keymap("n", "<leader>mp", ":Glow<CR>", opts)
-
 -- Trainer
 keymap("n", "<leader>trh", ":TrainUpDown<CR>", opts)
 keymap("n", "<leader>trw", ":TrainWord<CR>", opts)
