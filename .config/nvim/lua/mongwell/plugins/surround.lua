@@ -35,6 +35,7 @@ end
 
 return {
 	"echasnovski/mini.surround",
+    lazy = true,
 	opts = config_opts,
 	keys = surround_keys,
 }
