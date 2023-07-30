@@ -1,19 +1,19 @@
 local opts = { noremap = true, silent = true }
 
--- Keymap wrapper. Do not create the 
+-- Keymap wrapper. Do not create the
 -- keymap if a lazy keys handler exists
 local function keymap(mode, lhs, rhs, opts)
-	local keys = require("lazy.core.handler").handlers.keys
-	if not keys.active[keys.parse({ lhs, mode = mode }).id] then
-		opts = opts or {}
-		opts.silent = opts.silent ~= false
-		if opts.remap and not vim.g.vscode then
-			opts.remap = nil
-		end
-		vim.keymap.set(mode, lhs, rhs, opts)
+    local keys = require("lazy.core.handler").handlers.keys
+    if not keys.active[keys.parse({ lhs, mode = mode }).id] then
+        opts = opts or {}
+        opts.silent = opts.silent ~= false
+        if opts.remap and not vim.g.vscode then
+            opts.remap = nil
+        end
+        vim.keymap.set(mode, lhs, rhs, opts)
     else
-		print("keymap already in use")
-	end
+        print("keymap already in use")
+    end
 end
 
 -- Modes

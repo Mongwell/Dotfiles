@@ -17,7 +17,7 @@ end
 -- Filter for unwanted buffers, filetypes, or other rules.
 local function unwanted_filter(buf_num, buf_nums)
     -- filter out filetypes you don't want to see
-    local unwanted_fts = { ["fugitive"] = true, }
+    local unwanted_fts = { ["fugitive"] = true }
 
     -- filter out by buffer name
     local unwanted_bufnames = {}
@@ -35,19 +35,19 @@ local function unwanted_filter(buf_num, buf_nums)
     return true
 end
 
-bufferline.setup {
+bufferline.setup({
     options = {
         close_command = "Bdelete! %d",
         right_mouse_command = "Bdelete! %d",
         left_mouse_command = "buffer %d",
 
-        modified_icon = '●',
-        close_icon = '',
-        left_trunc_marker = '',
-        right_trunc_marker = '',
+        modified_icon = "●",
+        close_icon = "",
+        left_trunc_marker = "",
+        right_trunc_marker = "",
         indicator = {
             style = "icon",
-            icon = '▎'
+            icon = "▎",
         },
 
         max_name_length = 30,
@@ -60,10 +60,13 @@ bufferline.setup {
 
         -- NOTE: this will be called a lot so don't do any heavy processing here
         custom_filter = unwanted_filter,
-        offsets = { { filetype = "NvimTree",
-            text = "File Explorer",
-            text_align = "left",
-        } },
+        offsets = {
+            {
+                filetype = "NvimTree",
+                text = "File Explorer",
+                text_align = "left",
+            },
+        },
         color_icons = true,
         show_buffer_icons = true,
         show_buffer_close_icons = true,
@@ -73,4 +76,4 @@ bufferline.setup {
         separator_style = "slant", -- "slant" | "thick" | "thin" | { 'any', 'any' },
         enforce_regular_tabs = true,
     },
-}
+})

@@ -3,7 +3,7 @@ local indentline_opts = {
     show_current_context_start = true,
     use_treesitter = true,
     show_trailing_blankline_indent = false,
-    filetype_exclude = { 'help', 'org*' },
+    filetype_exclude = { "help", "org*" },
 }
 
 return {

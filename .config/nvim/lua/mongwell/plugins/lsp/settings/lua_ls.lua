@@ -14,7 +14,7 @@ M.opts = {
                 },
             },
         },
-    }
+    },
 }
 
 M.setup_handler = function()

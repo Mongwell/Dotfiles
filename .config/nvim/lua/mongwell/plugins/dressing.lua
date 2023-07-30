@@ -6,13 +6,13 @@ local dressing_opts = {
         mappings = {
             i = {
                 ["<C-e>"] = "Close",
-            }
-        }
+            },
+        },
     },
     select = {
         enabled = true,
         trim_prompt = false,
-    }
+    },
 }
 
 return {

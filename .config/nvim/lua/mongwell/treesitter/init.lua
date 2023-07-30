@@ -3,5 +3,5 @@ if not status_ok then
     return
 end
 
-require "mongwell.treesitter.config"
-require "mongwell.treesitter.context"
+require("mongwell.treesitter.config")
+require("mongwell.treesitter.context")

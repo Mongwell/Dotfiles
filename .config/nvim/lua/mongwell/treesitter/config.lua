@@ -3,7 +3,7 @@ if not status_ok then
     return
 end
 
-configs.setup {
+configs.setup({
     ensure_installed = "all",
     sync_install = false,
     highlight = {
@@ -16,9 +16,9 @@ configs.setup {
     },
     indent = {
         enable = true,
-        disable = { "python", "org" }
+        disable = { "python", "org" },
     },
-}
+})
 
 -- --  Fold using treesitter, but disabled by default
 vim.o.foldmethod = "expr"

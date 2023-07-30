@@ -3,29 +3,29 @@ if not status_ok then
     return
 end
 
-tscontext.setup {
+tscontext.setup({
     enable = true,
     max_lines = 0,
     separator = nil,
     patterns = {
         default = {
             -- 'class',
-            'function',
-            'method',
-            'for',
-            'while',
-            'if',
-            'switch',
-            'case',
+            "function",
+            "method",
+            "for",
+            "while",
+            "if",
+            "switch",
+            "case",
         },
         markdown = {
-            'section'
+            "section",
         },
         json = {
-            'pair',
+            "pair",
         },
         yaml = {
-            'bloc_mapping_pair',
+            "bloc_mapping_pair",
         },
     },
-}
+})

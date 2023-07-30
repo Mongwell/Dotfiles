@@ -3,6 +3,4 @@ if not bullets_ok then
     return
 end
 
-bullets.setup {
-
-}
+bullets.setup({})

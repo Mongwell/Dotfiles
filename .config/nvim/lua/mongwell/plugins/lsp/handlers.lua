@@ -9,7 +9,9 @@ M.setup = function()
     }
     for _, sign in ipairs(signs) do
         vim.fn.sign_define(sign.name, {
-            texthl = sign.name, text = sign.text, numhl = ""
+            texthl = sign.name,
+            text = sign.text,
+            numhl = "",
         })
     end
 
@@ -44,7 +46,7 @@ local function lsp_highlight_document(client, bufnr)
     -- Set autocommands conditional on server_capabilities
     if client.server_capabilities.documentHighlightProvider then
         vim.api.nvim_create_augroup("lsp_document_highlight", { clear = true })
-        vim.api.nvim_clear_autocmds { buffer = bufnr, group = "lsp_document_highlight" }
+        vim.api.nvim_clear_autocmds({ buffer = bufnr, group = "lsp_document_highlight" })
         vim.api.nvim_create_autocmd("CursorHold", {
             callback = vim.lsp.buf.document_highlight,
             buffer = bufnr,

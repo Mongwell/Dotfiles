@@ -7,7 +7,7 @@ M.opts = {
     capabilities = handlers.capabilities,
 }
 
-M.setup_handler = function (server)
+M.setup_handler = function(server)
     require("lspconfig")[server].setup(M.opts)
 end
 
