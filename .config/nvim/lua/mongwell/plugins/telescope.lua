@@ -1,4 +1,4 @@
-local config_opts = {
+local telescope_opts = {
 	defaults = {
 		prompt_prefix = " ",
 		selection_caret = " ",
@@ -52,7 +52,7 @@ return {
 	dependencies = { "plenary.nvim", { "nvim-telescope/telescope-fzf-native.nvim", build = "make" } },
 	lazy = true,
 	cmd = "Telescope",
-	opts = config_opts,
+	opts = telescope_opts,
 	config = function(_, opts)
 		require("telescope").setup(opts)
         require("telescope").load_extension('fzf')

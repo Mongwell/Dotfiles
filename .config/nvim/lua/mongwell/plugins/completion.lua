@@ -43,7 +43,7 @@ local kind_icons = {
 	Package = "",
 }
 
-local function cmp_config()
+local function cmp_opts()
 	local cmp = require("cmp")
 	local luasnip = require("luasnip")
 	return {
@@ -157,7 +157,7 @@ return {
 			"hrsh7th/cmp-nvim-lsp-signature-help",
 		},
 		lazy = true,
-		opts = cmp_config,
+		opts = cmp_opts,
 		event = "InsertEnter",
 	},
 }

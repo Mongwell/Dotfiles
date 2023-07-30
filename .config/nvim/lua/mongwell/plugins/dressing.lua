@@ -1,4 +1,4 @@
-local config_opts = {
+local dressing_opts = {
     input = {
         enabled = true,
         insert_only = false,
@@ -19,5 +19,5 @@ return {
     "stevearc/dressing.nvim",
     lazy = true,
     event = "VeryLazy",
-    opts = config_opts,
+    opts = dressing_opts,
 }

@@ -1,4 +1,4 @@
-local mason_config = {
+local mason_opts = {
 	ui = {
 		icons = {
 			package_pending = " ",
@@ -8,7 +8,7 @@ local mason_config = {
 	},
 }
 
-local masonlsp_config = {
+local masonlsp_opts = {
 	ensure_installed = { "lua_ls", "pylsp" },
 }
 
@@ -33,7 +33,7 @@ return {
 	{
 		"williamboman/mason.nvim",
 		lazy = true,
-		opts = mason_config,
+		opts = mason_opts,
         build = ":MasonUpdate",
 		cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
 	},
@@ -41,6 +41,6 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		dependencies = { "mason.nvim" },
 		lazy = true,
-		opts = masonlsp_config,
+		opts = masonlsp_opts,
 	},
 }

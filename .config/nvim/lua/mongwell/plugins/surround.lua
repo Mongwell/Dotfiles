@@ -1,4 +1,4 @@
-config_opts = {
+local surround_opts = {
 	custom_surroundings = nil,
 	highlight_duration = 1500,
 	mappings = {
@@ -36,6 +36,6 @@ end
 return {
 	"echasnovski/mini.surround",
     lazy = true,
-	opts = config_opts,
+	opts = surround_opts,
 	keys = surround_keys,
 }
