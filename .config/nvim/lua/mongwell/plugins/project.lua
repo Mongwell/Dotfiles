@@ -6,15 +6,9 @@ local project_opts = {
 }
 
 return {
-    "telescope.nvim",
-    dependencies = {
-        "ahmedkhalf/project.nvim",
-        lazy = true,
-        opts = project_opts,
-        cmd = "Telescope projects",
-        config = function(_, opts)
-            require("project_nvim").setup(opts)
-            require("telescope").load_extension("projects")
-        end,
-    },
+    "ahmedkhalf/project.nvim",
+    opts = project_opts,
+    main = "project_nvim",
+    event = "VimEnter",
+    cmd = "Telescope projects",
 }

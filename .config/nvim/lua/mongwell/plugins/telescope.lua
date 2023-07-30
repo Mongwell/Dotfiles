@@ -54,7 +54,9 @@ return {
     cmd = "Telescope",
     opts = telescope_opts,
     config = function(_, opts)
-        require("telescope").setup(opts)
-        require("telescope").load_extension("fzf")
+        local telescope = require("telescope")
+        telescope.setup(opts)
+        telescope.load_extension("fzf")
+        pcall(telescope.load_extension("projects"))
     end,
 }
