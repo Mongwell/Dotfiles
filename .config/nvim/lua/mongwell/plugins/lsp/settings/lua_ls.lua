@@ -1,4 +1,4 @@
-local defaults = require("mongwell.lsp.settings.defaults")
+local defaults = require("mongwell.plugins.lsp.settings.defaults")
 
 local M = {}
 
@@ -14,7 +14,7 @@ M.opts = {
                 },
             },
         },
-    }
+    },
 }
 
 M.setup_handler = function()

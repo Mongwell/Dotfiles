@@ -3,7 +3,6 @@ if not headlines_ok then
     return
 end
 
-headlines.setup {
-    org = {
-    },
-}
+headlines.setup({
+    org = {},
+})

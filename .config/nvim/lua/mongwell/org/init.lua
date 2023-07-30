@@ -1,9 +1,9 @@
-vim.api.nvim_create_autocmd('FileType', {
-    pattern = 'org*',
-    callback = function ()
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "org*",
+    callback = function()
         vim.opt_local.colorcolumn = ""
         vim.opt_local.conceallevel = 3
-    end
+    end,
 })
 
 local org_ok, _ = pcall(require, "orgmode")
@@ -16,7 +16,7 @@ if not ts_ok then
     return
 end
 
-require "mongwell.org.orgmode"
-require "mongwell.org.bullets"
-require "mongwell.org.telescope-orgmode"
-require "mongwell.org.headlines"
+require("mongwell.org.orgmode")
+require("mongwell.org.bullets")
+require("mongwell.org.telescope-orgmode")
+require("mongwell.org.headlines")

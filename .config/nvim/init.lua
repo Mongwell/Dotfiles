@@ -1,26 +1,11 @@
-require "mongwell.options"
-require "mongwell.keymaps"
-require "mongwell.packer"
-require "mongwell.telescope"
-require "mongwell.dressing"
-require "mongwell.colorscheme"
-require "mongwell.icons"
-require "mongwell.galaxyline"
-require "mongwell.bufferline"
-require "mongwell.nvimtree"
-require "mongwell.lsp"
-require "mongwell.completion"
-require "mongwell.lightbulb"
-require "mongwell.treesitter"
-require "mongwell.gitsigns"
-require "mongwell.autopairs"
-require "mongwell.comments"
-require "mongwell.toggleterm"
-require "mongwell.surround"
-require "mongwell.undotree"
-require "mongwell.project"
-require "mongwell.indentline"
-require "mongwell.alpha"
-require "mongwell.ipy"
-require "mongwell.org"
-require "mongwell.functions"
+require("mongwell.options")
+require("mongwell.functions")
+
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+require("mongwell.bootstrap").lazy_setup(lazypath)
+local status_ok, lazy = pcall(require, "lazy")
+if status_ok then
+    lazy.setup("mongwell.plugins")
+end
+
+require("mongwell.keymaps")

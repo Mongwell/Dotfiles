@@ -1,9 +1,4 @@
-local status_ok, dressing = pcall(require, "dressing")
-if not status_ok then
-    return
-end
-
-dressing.setup {
+local dressing_opts = {
     input = {
         enabled = true,
         insert_only = false,
@@ -11,11 +6,18 @@ dressing.setup {
         mappings = {
             i = {
                 ["<C-e>"] = "Close",
-            }
-        }
+            },
+        },
     },
     select = {
         enabled = true,
         trim_prompt = false,
-    }
+    },
+}
+
+return {
+    "stevearc/dressing.nvim",
+    lazy = true,
+    event = "VeryLazy",
+    opts = dressing_opts,
 }

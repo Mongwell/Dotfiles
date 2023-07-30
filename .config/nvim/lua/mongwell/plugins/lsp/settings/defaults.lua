@@ -1,4 +1,4 @@
-local handlers = require("mongwell.lsp.handlers")
+local handlers = require("mongwell.plugins.lsp.handlers")
 
 local M = {}
 
@@ -7,7 +7,7 @@ M.opts = {
     capabilities = handlers.capabilities,
 }
 
-M.setup_handler = function (server)
+M.setup_handler = function(server)
     require("lspconfig")[server].setup(M.opts)
 end
 
