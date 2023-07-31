@@ -1,16 +1,35 @@
-return {
+local scheme_plugins = {
     {
-        "rebelot/kanagawa.nvim",
-        lazy = false,
-        priority = 1000,
-        config = function()
-            vim.cmd([[colorscheme kanagawa]])
-        end,
+        plugin = "rebelot/kanagawa.nvim",
+        name = "kanagawa",
+        opts = { colors = { theme = { all = { ui = { bg_gutter = "none" } } } } },
     },
-    { "navarasu/onedark.nvim",       lazy = true },
-    { "folke/tokyonight.nvim",       lazy = true, opts = { style = "night" } },
-    { "marko-cerovac/material.nvim", lazy = true },
-    { "sainnhe/gruvbox-material",    lazy = true },
-    { "glepnir/zephyr-nvim",         lazy = true },
-    { "sainnhe/sonokai",             lazy = true },
+    {
+        plugin = "folke/tokyonight.nvim",
+        name = "tokyonight",
+        opts = { style = "night" }
+    },
+    { plugin = "navarasu/onedark.nvim",       name = "onedark" },
+    { plugin = "marko-cerovac/material.nvim", name = "material", },
+    { plugin = "sainnhe/gruvbox-material",    name = "gruvbox-material" },
+    { plugin = "glepnir/zephyr-nvim",         name = "zephyr" },
+    { plugin = "sainnhe/sonokai",             name = "sonokai" },
 }
+
+local M = {}
+for _, scheme in pairs(scheme_plugins) do
+    table.insert(M, {
+        scheme.plugin,
+        lazy = vim.g.colorscheme ~= scheme.name,
+        priority = 1000,
+        opts = scheme.opts,
+        config = function(_, opts)
+            if scheme.opts then
+                require(scheme.name).setup(opts)
+            end
+            vim.cmd.colorscheme(scheme.name)
+        end
+    })
+end
+
+return M

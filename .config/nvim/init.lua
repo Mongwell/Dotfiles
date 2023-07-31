@@ -1,6 +1,8 @@
 require("mongwell.options")
 require("mongwell.functions")
 
+vim.g.colorscheme = "kanagawa"
+
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 require("mongwell.bootstrap").lazy_setup(lazypath)
 local status_ok, lazy = pcall(require, "lazy")
