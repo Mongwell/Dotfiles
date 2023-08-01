@@ -45,7 +45,7 @@ keymap("n", "]b", ":bnext<CR>", opts)
 keymap("n", "[b", ":bprevious<CR>", opts)
 keymap("n", "<leader>q", ":Bdelete<CR>", opts)
 keymap("n", "<leader>w", ":Bwipeout<CR>", opts)
-keymap("n", "<leader>b", ":BufferLinePick<CR>", opts)
+keymap("n", "<leader>bp", ":BufferLinePick<CR>", opts)
 
 -- Clear search
 keymap("n", "<leader>l", ":noh<CR>", opts)
@@ -96,7 +96,10 @@ keymap("n", "<C-p>", ":lua _IPY_TOGGLE()<CR>", opts)
 keymap("v", "<leader>x", ":ToggleTermSendVisualSelection 1<CR>", opts)
 keymap("n", "<leader>x", ":ToggleTermSendCurrentLine 1<CR>", opts)
 
---UndoTree
+-- Barbecue
+keymap("n", "<leader>bbq", ":Barbecue toggle<CR>", opts)
+
+-- UndoTree
 keymap("n", "<leader>ut", ":UndotreeToggle<CR>", opts)
 
 -- Trainer
