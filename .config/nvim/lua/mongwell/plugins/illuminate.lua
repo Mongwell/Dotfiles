@@ -3,6 +3,7 @@ local illum_opts = {
     filetypes_denylist = {
         "dirvish",
         "fugitive",
+        "gitcommit",
         "alpha",
         "NvimTree",
         "lazy",

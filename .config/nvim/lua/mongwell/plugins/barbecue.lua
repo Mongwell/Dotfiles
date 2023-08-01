@@ -1,6 +1,7 @@
 local barbecue_opts = {
     show_dirname = true,
     show_basename = true,
+    exclude_filetypes = { "netrw", "toggleterm", "gitcommit", "fugitive", "alpha", "NvimTree", "lazy" },
 }
 return {
     "utilyre/barbecue.nvim",
