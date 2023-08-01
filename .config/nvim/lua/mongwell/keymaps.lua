@@ -43,8 +43,6 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 -- Buffers
 keymap("n", "]b", ":bnext<CR>", opts)
 keymap("n", "[b", ":bprevious<CR>", opts)
-keymap("n", "<leader>q", ":Bdelete<CR>", opts)
-keymap("n", "<leader>w", ":Bwipeout<CR>", opts)
 keymap("n", "<leader>bp", ":BufferLinePick<CR>", opts)
 
 -- Clear search
