@@ -1,51 +1,54 @@
-local telescope_opts = {
-    defaults = {
-        prompt_prefix = " ",
-        selection_caret = " ",
-        path_display = { "smart" },
+local function telescope_opts()
+    local actions = require("telescope.actions")
+    return {
+        defaults = {
+            prompt_prefix = " ",
+            selection_caret = " ",
+            path_display = { "smart" },
 
-        mappings = {
-            i = {
-                ["<C-n>"] = require("telescope.actions").cycle_history_next,
-                ["<C-p>"] = require("telescope.actions").cycle_history_prev,
+            mappings = {
+                i = {
+                    ["<C-n>"] = actions.cycle_history_next,
+                    ["<C-p>"] = actions.cycle_history_prev,
 
-                ["<C-j>"] = require("telescope.actions").move_selection_next,
-                ["<C-k>"] = require("telescope.actions").move_selection_previous,
+                    ["<C-j>"] = actions.move_selection_next,
+                    ["<C-k>"] = actions.move_selection_previous,
 
-                ["<C-h>"] = require("telescope.actions").select_horizontal,
+                    ["<C-h>"] = actions.select_horizontal,
 
-                ["<C-e>"] = require("telescope.actions").close,
+                    ["<C-e>"] = actions.close,
+                },
             },
         },
-    },
 
-    pickers = {
-        find_files = {
-            theme = "dropdown",
+        pickers = {
+            find_files = {
+                theme = "dropdown",
+            },
+            buffers = {
+                theme = "dropdown",
+            },
+            git_files = {
+                theme = "dropdown",
+            },
+            git_bcommits = {
+                theme = "dropdown",
+            },
+            diagnostics = {
+                theme = "ivy",
+            },
+            lsp_references = {
+                theme = "ivy",
+            },
         },
-        buffers = {
-            theme = "dropdown",
-        },
-        git_files = {
-            theme = "dropdown",
-        },
-        git_bcommits = {
-            theme = "dropdown",
-        },
-        diagnostics = {
-            theme = "ivy",
-        },
-        lsp_references = {
-            theme = "ivy",
-        },
-    },
 
-    extensions = {
-        fzf = {
-            override_generic_sorter = true,
+        extensions = {
+            fzf = {
+                override_generic_sorter = true,
+            },
         },
-    },
-}
+    }
+end
 
 return {
     "nvim-telescope/telescope.nvim",
