@@ -19,6 +19,7 @@ local ts_opts = {
         "make",
         "markdown",
         "markdown_inline",
+        "org",
         "python",
         "regex",
         "rust",
@@ -57,10 +58,13 @@ return {
         "TSInstallFromGrammar",
     },
     event = { "BufReadPost", "BufNewFile" },
-    opts = ts_opts,
     init = function()
         vim.o.foldmethod = "expr"
         vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-        vim.o.foldenable = 0
+        vim.o.foldenable = false
+    end,
+    opts = ts_opts,
+    config = function (_, opts)
+        require("nvim-treesitter.configs").setup(opts)
     end
 }
