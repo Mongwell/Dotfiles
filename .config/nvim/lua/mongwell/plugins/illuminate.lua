@@ -1,7 +1,7 @@
 local illum_opts = {
     delay = 200,
     filetypes_denylist = {
-        "dirvish",
+        "far",
         "fugitive",
         "gitcommit",
         "alpha",
