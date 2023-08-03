@@ -89,8 +89,12 @@ keymap("n", "<leader>hr", ":Gitsigns undo_stage_hunk<CR>", opts)
 keymap("n", "<leader>gds", ":Gitsigns diffthis<CR>", opts)
 
 -- Toggleterm
-keymap("n", "<C-g>", ":lua _LAZYGIT_TOGGLE()<CR>", opts)
-keymap("n", "<C-p>", ":lua _IPY_TOGGLE()<CR>", opts)
+keymap("n", "<M-h>", ":ToggleTerm direction=horizontal<CR>", {})
+keymap("n", "<M-v>", ":ToggleTerm direction=vertical<CR>", {})
+keymap("n", "<M-f>", ":ToggleTerm direction=float<CR>", {})
+keymap("t", "<M-h>", [[<C-\><M-h>]], { remap = true, silent = true })
+keymap("t", "<M-v>", [[<C-\><M-v>]], { remap = true, silent = true })
+keymap("t", "<M-f>", [[<C-\><M-f>]], { remap = true, silent = true })
 keymap("v", "<leader>x", ":ToggleTermSendVisualSelection 1<CR>", opts)
 keymap("n", "<leader>x", ":ToggleTermSendCurrentLine 1<CR>", opts)
 
