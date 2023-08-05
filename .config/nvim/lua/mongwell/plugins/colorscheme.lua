@@ -22,12 +22,15 @@ for _, scheme in pairs(scheme_plugins) do
         scheme.plugin,
         lazy = vim.g.colorscheme ~= scheme.name,
         priority = 1000,
+        event = vim.g.colorscheme ~= scheme.name and nil or "VeryLazy",
         opts = scheme.opts,
         config = function(_, opts)
             if scheme.opts then
                 require(scheme.name).setup(opts)
             end
-            vim.cmd.colorscheme(scheme.name)
+            if vim.g.colorscheme == scheme.name then
+                vim.cmd.colorscheme(scheme.name)
+            end
         end
     })
 end

@@ -71,6 +71,7 @@ keymap("n", "<leader>fd", ":Telescope diagnostics<CR>", opts)
 keymap("n", "<leader>fr", ":Telescope lsp_references<CR>", opts)
 keymap("n", "<leader>fk", ":Telescope treesitter<CR>", opts)
 keymap("n", "<leader>fp", ":Telescope projects theme=dropdown<CR>", opts)
+keymap("n", "<leader>fth", ":Telescope colorscheme<CR>", opts)
 
 -- Fugitive
 keymap("n", "<leader>gs", ":G<CR>", opts)
