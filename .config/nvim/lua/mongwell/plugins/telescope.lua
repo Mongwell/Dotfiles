@@ -2,6 +2,7 @@ local function telescope_opts()
     local actions = require("telescope.actions")
     return {
         defaults = {
+            file_ignore_patterns = { ".git/" },
             prompt_prefix = " ",
             selection_caret = " ",
             path_display = { "smart" },
