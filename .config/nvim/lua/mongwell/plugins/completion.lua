@@ -120,6 +120,9 @@ local function cmp_opts()
         },
         window = {
             documentation = cmp.config.window.bordered(),
+            completion = cmp.config.window.bordered({
+                scrollbar = true,
+            }),
         },
         experimental = {
             ghost_text = true,
