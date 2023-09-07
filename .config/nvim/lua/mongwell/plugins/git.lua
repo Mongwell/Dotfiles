@@ -39,6 +39,14 @@ local gitsigns_opts = {
     },
 }
 
+local conflict_opts = {
+    disable_diagnostics = true,
+    default_mappings = {
+        next = ']c',
+        prev = '[c',
+    },
+}
+
 return {
     {
         "tpope/vim-fugitive",
@@ -51,4 +59,10 @@ return {
         event = { "BufReadPre", "BufNewFile" },
         opts = gitsigns_opts,
     },
+    {
+        "akinsho/git-conflict.nvim",
+        lazy = true,
+        event = { "BufReadPost", "BufNewFile" },
+        opts = conflict_opts,
+    }
 }
