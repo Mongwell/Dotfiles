@@ -1,7 +1,7 @@
 require("mongwell.options")
 require("mongwell.functions")
 
-vim.g.colorscheme = "tokyonight"
+vim.g.colorscheme = "catppuccin"
 
 local lazy_opts = {
     change_detection = {

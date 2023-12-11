@@ -9,12 +9,16 @@ local scheme_plugins = {
         name = "tokyonight",
         opts = { style = "night" }
     },
-    { plugin = "sainnhe/gruvbox-material",    name = "gruvbox-material" },
-    { plugin = "sainnhe/sonokai",             name = "sonokai" },
-    { plugin = "sainnhe/everforest",          name = "everforest" },
-    { plugin = "rose-pine/neovim",            name = "rose-pine" },
-    { plugin = "catppuccin/nvim",             name = "catppuccin" },
-    { plugin = "edeneast/nightfox.nvim",      name = "nightfox" }
+    {
+        plugin = "catppuccin/nvim",
+        name = "catppuccin",
+        opts = { flavour = "macchiato" }
+    },
+    { plugin = "sainnhe/gruvbox-material", name = "gruvbox-material" },
+    { plugin = "sainnhe/sonokai",          name = "sonokai" },
+    { plugin = "sainnhe/everforest",       name = "everforest" },
+    { plugin = "rose-pine/neovim",         name = "rose-pine" },
+    { plugin = "edeneast/nightfox.nvim",   name = "nightfox" }
 }
 
 local M = {}
