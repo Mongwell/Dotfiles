@@ -45,7 +45,7 @@ local function toggleterm_config(_, opts)
         ipython:toggle()
     end
 
-    vim.keymap.set({ "n", "t" }, "<M-p>", ipy_toggle, { noremap = true, silent = true })
+    vim.keymap.set({ "n", "t" }, "<C-p>", ipy_toggle, { noremap = true, silent = true })
 end
 
 
@@ -60,7 +60,7 @@ return {
         "ToggleTermSendVisualLines",
         "ToggleTermSendVisualSelection",
     },
-    keys = { { "<M-p>", desc = "Toggle IPython" }, { toggleterm_opts.open_mapping, desc = "Toggle terminal" } },
+    keys = { { "<C-p>", desc = "Toggle IPython" }, { toggleterm_opts.open_mapping, desc = "Toggle terminal" } },
     opts = toggleterm_opts,
     init = toggleterm_init,
     config = toggleterm_config,
