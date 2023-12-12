@@ -16,12 +16,14 @@ M.setup = function()
     end
 
     local config = {
-        virtual_text = true,
+        virtual_text = {
+            severity = vim.diagnostic.severity.E,
+        },
         signs = {
             active = signs,
         },
         update_in_insert = false,
-        underline = true,
+        underline = false,
         severity_sort = true,
         float = {
             focusable = false,
