@@ -20,30 +20,25 @@ local function telescope_opts()
                     ["<C-e>"] = actions.close,
                 },
             },
-            border = false,
+            border = true,
         },
 
         pickers = {
             find_files = {
                 theme = "dropdown",
                 hidden = true,
-                border = false,
             },
             live_grep = {
                 theme = "dropdown",
-                border = false,
             },
             buffers = {
                 theme = "dropdown",
-                border = false,
             },
             git_files = {
                 theme = "dropdown",
-                border = false,
             },
             git_bcommits = {
                 theme = "dropdown",
-                border = false,
             },
             diagnostics = {
                 theme = "ivy",
