@@ -21,9 +21,9 @@ end
 local function diagnostics_indicator(_, _, diagnostics, _)
     local result_comps = {}
     local symbols = {
-        error = "",
-        warning = "",
-        info = "",
+        error = "󰅚",
+        warning = "󰀪",
+        info = "󰋽",
     }
     for name, count in pairs(diagnostics) do
         if symbols[name] and count > 0 then

@@ -4,7 +4,7 @@ local function telescope_opts()
         defaults = {
             file_ignore_patterns = { ".git/" },
             prompt_prefix = " ",
-            selection_caret = " ",
+            selection_caret = "",
             path_display = { "smart" },
 
             mappings = {

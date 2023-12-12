@@ -5,8 +5,6 @@ local gitsigns_opts = {
         delete = { text = "󰍵" },
         topdelete = { text = "󰍵" },
         changedelete = { text = "▎" },
-        -- delete = { text = "" },
-
     },
     signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
     numhl = false,     -- Toggle with `:Gitsigns toggle_numhl`

@@ -1,23 +1,23 @@
 M = {}
 
 local function servers()
-                    local buf_clients = vim.lsp.get_active_clients({ bufnr = 0 })
-                    if #buf_clients == 0 then
-                        return ""
-                    end
+    local buf_clients = vim.lsp.get_active_clients({ bufnr = 0 })
+    if #buf_clients == 0 then
+        return ""
+    end
 
-                    -- add client
-                    local buf_client_names = {}
-                    for _, client in pairs(buf_clients) do
-                        if client.name ~= "null-ls" and client.name ~= "copilot" then
-                            table.insert(buf_client_names, client.name)
-                        end
-                    end
+    -- add client
+    local buf_client_names = {}
+    for _, client in pairs(buf_clients) do
+        if client.name ~= "null-ls" and client.name ~= "copilot" then
+            table.insert(buf_client_names, client.name)
+        end
+    end
 
-                    local unique_client_names = table.concat(buf_client_names, ", ")
-                    local language_servers = string.format("%s", unique_client_names)
-                    return language_servers
-                end
+    local unique_client_names = table.concat(buf_client_names, ", ")
+    local language_servers = string.format("%s", unique_client_names)
+    return language_servers
+end
 
 M.lualine_sections = function(sep_l, sep_r)
     return {
@@ -57,10 +57,10 @@ M.lualine_sections = function(sep_l, sep_r)
             {
                 "filename",
                 symbols = {
-                    -- modified = "",
-                    modified = "",
+                    modified = " ",
+                    -- modified = "",
                     -- readonly = "",
-                    readonly = "",
+                    readonly = "󰍁",
                 },
             },
 
@@ -73,7 +73,12 @@ M.lualine_sections = function(sep_l, sep_r)
         lualine_c = {
             {
                 "branch",
-                icon = { "", align = "left", color = { fg = "#e8ab53" } },
+                icon = {
+                    -- "",
+                    "󰘬",
+                    align = "left",
+                    color = { fg = "#e8ab53" }
+                },
             },
             {
                 "diff",

@@ -85,10 +85,10 @@ local glyphs = {
 local diagnostics = {
     enable = true,
     icons = {
-        hint = "",
-        info = "",
-        warning = "",
-        error = "",
+        hint = "󰌶",
+        info = "󰋽",
+        warning = "󰀪",
+        error = "󰅚",
     },
 }
 
