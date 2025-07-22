@@ -28,8 +28,10 @@ local function configure_servers()
         )
     end
 
+    local keymap_cfg = require("mongwell.plugins.lsp.keymaps")
+    keymap_cfg.once()
     local default_opts = {
-        on_attach = require("mongwell.plugins.lsp.keymaps").on_attach,
+        on_attach = keymap_cfg.on_attach,
         capabilities = default_capabilities,
     }
 
