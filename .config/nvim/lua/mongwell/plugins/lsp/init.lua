@@ -28,24 +28,25 @@ end
 return {
     {
         "neovim/nvim-lspconfig",
-        dependencies = { "mason-lspconfig.nvim", "cmp-nvim-lsp" },
+        dependencies = { "mason-lspconfig.nvim" },
         lazy = true,
-        event = { "BufReadPre", "BufNewFile" },
+        event = { "BufReadPre", "BufWritePost", "BufNewFile" },
         config = function()
             require("mongwell.plugins.lsp.handlers").setup()
             configure_servers()
         end,
     },
     {
-        "williamboman/mason.nvim",
+        "mason-org/mason.nvim",
         lazy = true,
         opts = mason_opts,
         build = ":MasonUpdate",
         cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
     },
     {
-        "williamboman/mason-lspconfig.nvim",
+        "mason-org/mason-lspconfig.nvim",
         dependencies = { "mason.nvim" },
+        cmd = { "LspInstall", "LspUninstall" },
         lazy = true,
         opts = masonlsp_opts,
     },
