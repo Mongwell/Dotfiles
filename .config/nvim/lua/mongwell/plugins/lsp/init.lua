@@ -32,7 +32,7 @@ return {
         lazy = true,
         event = { "BufReadPre", "BufWritePost", "BufNewFile" },
         config = function()
-            require("mongwell.plugins.lsp.handlers").setup()
+            require("mongwell.plugins.lsp.diagnostics").configure()
             configure_servers()
         end,
     },
