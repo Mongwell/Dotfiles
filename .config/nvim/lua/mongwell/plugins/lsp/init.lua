@@ -13,15 +13,35 @@ local masonlsp_opts = {
 }
 
 
-local lsp_opts_map = {
-    ["lua_ls"] = require("mongwell.plugins.lsp.settings.lua_ls"),
-    ["pylsp"] = require("mongwell.plugins.lsp.settings.pylsp"),
-    ["clangd"] = require("mongwell.plugins.lsp.settings.clangd"),
-}
-
+-- configure server capabilities and 'on_attach' behavior
 local function configure_servers()
-    for lsp_name, lsp_opts in pairs(lsp_opts_map) do
-        vim.lsp.config(lsp_name, lsp_opts)
+    -- extend default client capabilities with those from 'nvim-cmp'
+    -- enables autocompletions to pull from LSP, if 'nvim-cmp' is installed
+    local default_capabilities = vim.lsp.protocol.make_client_capabilities()
+    local have_cmp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+    if have_cmp then
+        local cmp_capabilities = cmp_nvim_lsp.default_capabilities()
+        default_capabilities = vim.tbl_deep_extend(
+            "force",
+            default_capabilities,
+            cmp_capabilities
+        )
+    end
+
+    local default_opts = {
+        capabilities = default_capabilities,
+    }
+
+    local server_opts_map = {
+        ["*"] = default_opts,
+        ["lua_ls"] = require("mongwell.plugins.lsp.settings.lua_ls"),
+        ["pylsp"] = require("mongwell.plugins.lsp.settings.pylsp"),
+        ["clangd"] = require("mongwell.plugins.lsp.settings.clangd"),
+    }
+
+    for lsp_name, server_opts in pairs(server_opts_map) do
+        local full_opts = vim.tbl_deep_extend("force", default_opts, server_opts)
+        vim.lsp.config(lsp_name, full_opts)
     end
 end
 
