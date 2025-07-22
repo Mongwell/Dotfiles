@@ -12,12 +12,18 @@ local masonlsp_opts = {
     ensure_installed = { "lua_ls", "pylsp" },
 }
 
-local setup_handlers_config = {
-    require("mongwell.plugins.lsp.settings.defaults").setup_handler,
-    ["lua_ls"] = require("mongwell.plugins.lsp.settings.lua_ls").setup_handler,
-    ["pylsp"] = require("mongwell.plugins.lsp.settings.pylsp").setup_handler,
-    ["clangd"] = require("mongwell.plugins.lsp.settings.clangd").setup_handler,
+
+local lsp_opts_map = {
+    ["lua_ls"] = require("mongwell.plugins.lsp.settings.lua_ls"),
+    ["pylsp"] = require("mongwell.plugins.lsp.settings.pylsp"),
+    ["clangd"] = require("mongwell.plugins.lsp.settings.clangd"),
 }
+
+local function configure_servers()
+    for lsp_name, lsp_opts in pairs(lsp_opts_map) do
+        vim.lsp.config(lsp_name, lsp_opts)
+    end
+end
 
 return {
     {
@@ -27,7 +33,7 @@ return {
         event = { "BufReadPre", "BufNewFile" },
         config = function()
             require("mongwell.plugins.lsp.handlers").setup()
-            require("mason-lspconfig").setup_handlers(setup_handlers_config)
+            configure_servers()
         end,
     },
     {
