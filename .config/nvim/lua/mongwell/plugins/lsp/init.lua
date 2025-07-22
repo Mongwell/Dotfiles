@@ -29,6 +29,7 @@ local function configure_servers()
     end
 
     local default_opts = {
+        on_attach = require("mongwell.plugins.lsp.keymaps").on_attach,
         capabilities = default_capabilities,
     }
 
