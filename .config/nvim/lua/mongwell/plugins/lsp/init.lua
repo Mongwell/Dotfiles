@@ -12,34 +12,62 @@ local masonlsp_opts = {
     ensure_installed = { "lua_ls", "pylsp" },
 }
 
-local setup_handlers_config = {
-    require("mongwell.plugins.lsp.settings.defaults").setup_handler,
-    ["lua_ls"] = require("mongwell.plugins.lsp.settings.lua_ls").setup_handler,
-    ["pylsp"] = require("mongwell.plugins.lsp.settings.pylsp").setup_handler,
-    ["clangd"] = require("mongwell.plugins.lsp.settings.clangd").setup_handler,
-}
+
+-- configure server capabilities and 'on_attach' behavior
+local function configure_servers()
+    -- extend default client capabilities with those from 'nvim-cmp'
+    -- enables autocompletions to pull from LSP, if 'nvim-cmp' is installed
+    local default_capabilities = vim.lsp.protocol.make_client_capabilities()
+    local have_cmp, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
+    if have_cmp then
+        local cmp_capabilities = cmp_nvim_lsp.default_capabilities()
+        default_capabilities = vim.tbl_deep_extend(
+            "force",
+            default_capabilities,
+            cmp_capabilities
+        )
+    end
+
+    local default_opts = {
+        on_attach = require("mongwell.plugins.lsp.keymaps").on_attach,
+        capabilities = default_capabilities,
+    }
+
+    local server_opts_map = {
+        ["*"] = default_opts,
+        ["lua_ls"] = require("mongwell.plugins.lsp.settings.lua_ls"),
+        ["pylsp"] = require("mongwell.plugins.lsp.settings.pylsp"),
+        ["clangd"] = require("mongwell.plugins.lsp.settings.clangd"),
+    }
+
+    for lsp_name, server_opts in pairs(server_opts_map) do
+        local full_opts = vim.tbl_deep_extend("force", default_opts, server_opts)
+        vim.lsp.config(lsp_name, full_opts)
+    end
+end
 
 return {
     {
         "neovim/nvim-lspconfig",
         dependencies = { "mason-lspconfig.nvim", "cmp-nvim-lsp" },
         lazy = true,
-        event = { "BufReadPre", "BufNewFile" },
+        event = { "BufReadPre", "BufWritePost", "BufNewFile" },
         config = function()
-            require("mongwell.plugins.lsp.handlers").setup()
-            require("mason-lspconfig").setup_handlers(setup_handlers_config)
+            require("mongwell.plugins.lsp.diagnostics").configure()
+            configure_servers()
         end,
     },
     {
-        "williamboman/mason.nvim",
+        "mason-org/mason.nvim",
         lazy = true,
         opts = mason_opts,
         build = ":MasonUpdate",
         cmd = { "Mason", "MasonInstall", "MasonUninstall", "MasonUninstallAll", "MasonLog" },
     },
     {
-        "williamboman/mason-lspconfig.nvim",
+        "mason-org/mason-lspconfig.nvim",
         dependencies = { "mason.nvim" },
+        cmd = { "LspInstall", "LspUninstall" },
         lazy = true,
         opts = masonlsp_opts,
     },

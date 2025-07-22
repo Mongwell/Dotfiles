@@ -57,6 +57,7 @@ keymap("n", "<leader>pm", ":put =execute('messages')<CR>", opts)
 
 -- LSP related
 keymap("n", "<leader>fmt", ":lua Format()<CR>", opts)
+keymap("n", "gl", vim.diagnostic.open_float, opts)
 
 -- Telescope
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
