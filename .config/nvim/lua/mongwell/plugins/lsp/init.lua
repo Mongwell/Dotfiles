@@ -12,6 +12,17 @@ local masonlsp_opts = {
     ensure_installed = { "lua_ls", "pylsp" },
 }
 
+-- wrap together several on_attach calls
+local function on_attach_wrapper(client, bufnr)
+    local keymap_cfg = require("mongwell.plugins.lsp.keymaps")
+    keymap_cfg.on_attach(client, bufnr)
+
+    -- ensures breadcrumbs works with multiple tabs
+    local have_navic, navic = pcall(require, "nvim-navic")
+    if have_navic and client.server_capabilities["documentSymbolProvider"] then
+        navic.attach(client, bufnr)
+    end
+end
 
 -- configure server capabilities and 'on_attach' behavior
 local function configure_servers()
@@ -31,7 +42,7 @@ local function configure_servers()
     local keymap_cfg = require("mongwell.plugins.lsp.keymaps")
     keymap_cfg.once()
     local default_opts = {
-        on_attach = keymap_cfg.on_attach,
+        on_attach = on_attach_wrapper,
         capabilities = default_capabilities,
     }
 
