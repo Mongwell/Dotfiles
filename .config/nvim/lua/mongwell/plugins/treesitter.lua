@@ -2,9 +2,11 @@ local ts_opts = {
     ensure_installed = {
         "bash",
         "c",
-        "comment",
         "cmake",
+        "comment",
         "cpp",
+        "csv",
+        "cuda",
         "diff",
         "dockerfile",
         "git_config",
@@ -12,7 +14,6 @@ local ts_opts = {
         "gitattributes",
         "gitcommit",
         "gitignore",
-        "go",
         "json",
         "lua",
         "luadoc",
@@ -21,7 +22,7 @@ local ts_opts = {
         "markdown_inline",
         "python",
         "regex",
-        "rust",
+        "requirements",
         "toml",
         "yaml",
     },
@@ -29,23 +30,33 @@ local ts_opts = {
     auto_install = true,
     highlight = {
         enable = true,
-        use_languagetree = true,
-        disable = { "" },
-    },
-    autopairs = {
-        enable = true,
     },
     indent = {
         enable = true,
-        disable = { "python", "yaml" },
+        disable = { "yaml" },
+    },
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            init_selection = "gnn",
+            node_incremental = "grn",
+            scope_incremental = "grc",
+            node_decremental = "grm",
+        },
     },
 }
 
+local function treesitter_init()
+    -- let treesitter decide how to fold
+    vim.wo.foldmethod = "expr"
+    vim.wo.foldexpr = vim.treesitter.foldexpr()
+    vim.o.foldenable = false -- do not fold everything on open
+end
 
 return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    lazy = true,
+    lazy = vim.fn.argc(-1) == 0, -- load treesitter early when opening a file from the cmdline
     cmd = {
         "TSInstall",
         "TSUninstall",
@@ -55,14 +66,10 @@ return {
         "TSInstallSync",
         "TSInstallFromGrammar",
     },
-    event = { "BufReadPost", "BufNewFile" },
-    init = function()
-        vim.o.foldmethod = "expr"
-        vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-        vim.o.foldenable = false
-    end,
+    event = { "BufReadPost", "BufNewFile", "VeryLazy" },
+    init = treesitter_init,
     opts = ts_opts,
-    config = function (_, opts)
+    config = function(_, opts)
         require("nvim-treesitter.configs").setup(opts)
     end
 }

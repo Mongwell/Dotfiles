@@ -1,5 +1,6 @@
 local autopairs_opts = {
-    enable_check_bracket_line = true
+    enable_check_bracket_line = true,
+    check_ts = true,
 }
 
 local function autopairs_config(_, setup_opts)
