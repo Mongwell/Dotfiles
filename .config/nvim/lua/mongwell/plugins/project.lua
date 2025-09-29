@@ -1,8 +1,5 @@
 local project_opts = {
-    manual_mode = false,
-    detection_methods = { "lsp", "pattern" },
     show_hidden = true,
-    exclude_dirs = {},
 }
 
 return {
