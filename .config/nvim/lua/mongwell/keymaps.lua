@@ -82,6 +82,7 @@ keymap("n", "<leader>gl", ":G log<CR>", opts)
 
 -- Gitsigns
 keymap("n", "<leader>gb", ":Gitsigns blame_line<CR>", opts)
+keymap("n", "<leader>gB", ":Gitsigns blame<CR>", opts)
 keymap("n", "<leader>gdt", ":Gitsigns toggle_deleted<CR>", opts)
 keymap("n", "<leader>hP", ":Gitsigns preview_hunk<CR>", opts)
 keymap("n", "<leader>hn", ":Gitsigns next_hunk<CR>", opts)
