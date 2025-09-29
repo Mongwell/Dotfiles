@@ -93,6 +93,7 @@ keymap("n", "<leader>hr", ":Gitsigns undo_stage_hunk<CR>", opts)
 keymap("n", "<leader>gds", ":Gitsigns diffthis<CR>", opts)
 
 -- Toggleterm
+keymap("n", "<leader>fs", ":TermSelect<CR>", opts)
 keymap("n", "<M-h>", ":ToggleTerm direction=horizontal<CR>", {})
 keymap("n", "<M-v>", ":ToggleTerm direction=vertical<CR>", {})
 keymap("n", "<M-f>", ":ToggleTerm direction=float<CR>", {})
