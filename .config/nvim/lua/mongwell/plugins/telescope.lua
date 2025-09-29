@@ -48,11 +48,6 @@ local function telescope_opts()
             },
         },
 
-        extensions = {
-            fzf = {
-                override_generic_sorter = true,
-            },
-        },
     }
 end
 
