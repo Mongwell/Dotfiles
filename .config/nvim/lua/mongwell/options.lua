@@ -2,6 +2,10 @@ local o = vim.opt
 
 vim.g.mapleader = " "
 
+-- disable netrw
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Numbering
 o.relativenumber = true
 o.number = true
@@ -28,6 +32,7 @@ o.smartcase = true
 o.incsearch = true
 o.hlsearch = true
 
+-- Misc
 o.errorbells = false
 o.wrap = false
 o.scrolloff = 10

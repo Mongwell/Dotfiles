@@ -33,6 +33,7 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- NvimTree
 keymap("n", "<leader>o", ":NvimTreeToggle<CR>", opts)
+keymap("n", "<leader>tf", ":NvimTreeFocus<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
