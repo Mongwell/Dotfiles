@@ -18,75 +18,34 @@ local function buffer_filter(buf_num, _)
     return true
 end
 
-local function diagnostics_indicator(_, _, diagnostics, _)
-    local result_comps = {}
-    local symbols = {
-        error = "󰅚",
-        warning = "󰀪",
-        info = "󰋽",
-    }
-    for name, count in pairs(diagnostics) do
-        if symbols[name] and count > 0 then
-            table.insert(result_comps, symbols[name])
-        end
-    end
-    local result = table.concat(result_comps, " ")
-    return #result > 0 and result or ""
-end
-
 local function bufferline_opts()
     local bufferline = require("bufferline")
     local opts = {
         always_show_bufferline = false,
         separator_style = "thin", -- "slant" | "thick" | "thin" | { 'any', 'any' },
-        sort_by = "insert_at_end",
-        style_preset = { bufferline.style_preset.minimal, bufferline.style_preset.no_italic },
+        style_preset = bufferline.style_preset.no_italic,
         close_command = function() require("mini.bufremove").delete(0, false) end,
         right_mouse_command = function() require("mini.bufremove").delete(0, false) end,
 
-        modified_icon = "●",
-        close_icon = "",
-        left_trunc_marker = "",
-        right_trunc_marker = "",
-        indicator = {
-            style = "icon",
-            icon = "▎",
-        },
         show_close_icon = false,
-
-        max_name_length = 18,
-        max_prefix_length = 15,
-        truncate_names = true,
-        tab_size = 18,
-        diagnostics = "nvim_lsp",
-        diagnostics_indicator = diagnostics_indicator,
 
         custom_filter = buffer_filter,
 
+        -- when bufferline is active and vertical splits like NvimTree are toggled on,
+        -- this adds a filler text to the horizontal row above that vsplit. basically
+        -- keep bufferline from spilling over to side splits
         offsets = {
             {
                 filetype = "undotree",
                 text = "Undotree",
-                highlight = "PanelHeading",
-                padding = 1,
             },
             {
                 filetype = "NvimTree",
                 text = "NvimTree",
-                highlight = "PanelHeading",
-                padding = 1,
-            },
-            {
-                filetype = "DiffviewFiles",
-                text = "Diff View",
-                highlight = "PanelHeading",
-                padding = 1,
             },
             {
                 filetype = "lazy",
                 text = "Lazy",
-                highlight = "PanelHeading",
-                padding = 1,
             },
         }
     }
