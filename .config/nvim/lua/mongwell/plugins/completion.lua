@@ -99,7 +99,6 @@ local function cmp_opts()
             format = function(entry, vim_item)
                 vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
                 vim_item.menu = ({
-                    orgmode = "[org]",
                     nvim_lsp = "[LSP]",
                     nvim_lua = "[NVIM]",
                     luasnip = "[Snippet]",
@@ -111,7 +110,6 @@ local function cmp_opts()
         },
         sources = {
             { name = "nvim_lsp_signature_help" },
-            { name = "orgmode" },
             { name = "nvim_lsp" },
             { name = "nvim_lua" },
             { name = "luasnip" },

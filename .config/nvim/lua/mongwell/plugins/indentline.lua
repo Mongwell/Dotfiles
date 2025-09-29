@@ -3,7 +3,7 @@ local indentline_opts = {
         enabled = false,
     },
     exclude = {
-        filetypes = { "help", "org*", "yaml", "yml" },
+        filetypes = { "help", "yaml", "yml" },
     }
 }
 

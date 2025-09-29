@@ -1,7 +1,6 @@
 local project_opts = {
     manual_mode = false,
     detection_methods = { "lsp", "pattern" },
-    patterns = { "=orgspace" },
     show_hidden = true,
     exclude_dirs = {},
 }

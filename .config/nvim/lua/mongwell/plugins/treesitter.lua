@@ -19,7 +19,6 @@ local ts_opts = {
         "make",
         "markdown",
         "markdown_inline",
-        "org",
         "python",
         "regex",
         "rust",
@@ -32,14 +31,13 @@ local ts_opts = {
         enable = true,
         use_languagetree = true,
         disable = { "" },
-        additional_vim_regex_highlighting = { "org" },
     },
     autopairs = {
         enable = true,
     },
     indent = {
         enable = true,
-        disable = { "python", "org", "yaml" },
+        disable = { "python", "yaml" },
     },
 }
 
